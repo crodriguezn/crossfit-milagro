@@ -1,0 +1,9 @@
+{
+    "name": "Desarrollador/crossfit",
+    "description": "A short description of what your package does",
+    "require": {
+        "php": ">=5.3.0",
+        "raveren/kint": "0.9",
+        "tinymce/tinymce": "dev-master"
+    }
+}
