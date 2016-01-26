@@ -1,0 +1,19 @@
+----SISTEMA DE COONTROL DE CROSSFIT
+
+Paso 0
+Configurar la Variable Global "ENVIRONMENT"
+DEFINIR por ("production")
+
+Paso 1
+Configurar BASE DE DATOS
+Se encuentra archivo dentro de la ruta (application/config/database.php)
+PARAMETROS
+[hostname,username,password,database,port,bin_dump]
+
+Paso 2
+Configurar Binario de Java
+Se encuentra archivo dentro de la ruta (application/config/binary.php)
+PARAMETROS
+[java_bin] = "(RUTA DEL JAVA BIN)";
+
+

@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond $1 !^(resources|_files|temp|user_guide) 
+RewriteRule ^(.*)$ index.php?/$1 [L]
