@@ -140,7 +140,7 @@ class Helper_App_View
             $content = $MY->load->view($view, $arrParams, true);
         }
         
-        $browser_message = Helper_App_Browser::obtener_browser();
+        $browser_message = Helper_App_Browser::isIExplorer();
         
         $arrParamsLayoutDefault = array(
             'useIframe'             => $useIframe,
