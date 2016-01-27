@@ -23,10 +23,7 @@ date_default_timezone_set('America/Guayaquil');
     define('ENVIRONMENT', 'production');
     define('TIME_LIMIT', 360000);
     ini_set('memory_limit', '2048M');
-    if (ENVIRONMENT != 'development')
-    {
-        ini_set('browscap', realpath('/aplication/binary/php_browscap.ini'));
-    }
+    
     
 /*
  *---------------------------------------------------------------
