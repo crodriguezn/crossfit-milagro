@@ -94,8 +94,7 @@
                         <input type="password" class="form-control" placeholder="Contraseña" name="password">
                         <i class="icon-lock form-control-feedback"></i>
                     </div>
-
-                    <div class="form-group has-feedback">
+                    <div class="form-group has-feedback <?php echo (ENVIRONMENT=='development') ? 'hidden':''; ?>">
                         <label>Código de Seguridad</label><br/>
                         <img class="img-captcha" src="resources/img/captcha.png" width="100%" />
                         <input type="text" class="form-control" placeholder="Seguridad" name="security">
