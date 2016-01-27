@@ -28,7 +28,7 @@ class Helper_App_Log
         $eConfigurationSystem = $mConfigurationSystem->load($id_system);
         
         $id_user = Helper_App_Session::getUserId();
-        $navegador = Helper_App_Browser::getBrowser();
+        $navegador = Helper_App_Session::getBrowser();
         $action = '';
         
         if( $LOG_TYPE == self::LOG_DEFAULT )    { $action = 'ACTION_DEFAULT'; }

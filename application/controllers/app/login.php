@@ -4,19 +4,18 @@ class Login extends MY_Controller
 {
     protected $name_key = 'login';
     
-    public $browser_message;
+    public $browser;
     
     function __construct()
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->browser_message = Helper_App_Browser::isIExplorer();
         if( Helper_App_Session::isLogin() )
         {
             $this->redirect('app/dashboard');
             return;
         }
-        
+        $this->browser = Helper_Browser::isIExplorer();
     }
 
 	public function index()
@@ -34,7 +33,7 @@ class Login extends MY_Controller
         
             $params_view = array(
             'login_title'        => $login_title,
-            'browser_message'    => $this->browser_message['isSuccess'] ? $this->browser_message['message'] : '',
+            'browser_message'    => $this->browser['isSuccess'] ? $this->browser['message'] : '',
             'eAppVersion'        => $eAppVersion
         );
         

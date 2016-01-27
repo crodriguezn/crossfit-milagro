@@ -140,7 +140,7 @@ class Helper_App_View
             $content = $MY->load->view($view, $arrParams, true);
         }
         
-        $browser_message = Helper_App_Browser::isIExplorer();
+        $browser = Helper_App_Session::isIExplorer();
         
         $arrParamsLayoutDefault = array(
             'useIframe'             => $useIframe,
@@ -151,7 +151,7 @@ class Helper_App_View
             'controller_current'    => $controller_current,
             'function_current'      => $function_current,
             //NAVEGADOR
-            'navegador'             => $browser_message,
+            'navegador'             => $browser,
             //DATA
             'eConfigurationSystem'  => $eConfigurationSystem,
             'eCompany'              => $eCompany,

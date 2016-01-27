@@ -21,8 +21,8 @@
         <link href="<?php echo $resources_path; ?>/css/styles.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/icons.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/jqueryFileTree.css" rel="stylesheet" type="text/css">
-        <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">-->
-        <!--<link type="text/css" rel="stylesheet" href="resources/css/custom.css">-->
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="resources/css/custom.css">
         <script type="text/javascript" src="resources/js/jquery/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="resources/js/jqueryui/1.10.4/ui/minified/jquery-ui.min.js"></script>
         <script type="text/javascript" src="resources/js/canvasloader/heartcode-canvasloader-min.js"></script>
@@ -190,7 +190,7 @@
                             <?php $isActiveMenu = ( $controller_current == 'dashboard' ); ?>
 
                             <li class="<?php if ($isActiveMenu) { ?>active<?php } ?>">
-                                <a href="<?php //echo current_url();           ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
+                                <a href="<?php //echo current_url();            ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
                                     <span>INICIO</span> 
                                     <i class="icon-screen2"></i>
                                 </a>
@@ -220,7 +220,7 @@
                                     ?>
 
                                     <li class="<?php if ($isActiveMenu) { ?>active<?php } ?>">
-                                        <a href="<?php //echo current_url();           ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
+                                        <a href="<?php //echo current_url();            ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
                                             <span><?php echo $menu->name; ?></span> 
                                             <i class="<?php echo is_null($menu->name_icon) ? 'icon-stack' : $menu->name_icon ?>"></i>
                                         </a>

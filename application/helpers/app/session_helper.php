@@ -63,7 +63,9 @@ class Helper_App_Session
             '__last_time'           => date('Y-m-d H:i:s'),
             '__inInactivity'        => TRUE,
             '__isBlock'             => FALSE,
-            '__id_system'           => Helper_Config::getSystemId()
+            '__id_system'           => Helper_Config::getSystemId(),
+            '__isIExplorer'         => Helper_Browser::isIExplorer(),
+            '__browser'             => Helper_Browser::getBrowser()
         ));
         self::buildData();
         self::debugAll();
@@ -369,6 +371,16 @@ class Helper_App_Session
     }
     // ======================================================
     
+    static public function getBrowser()
+    {
+        return self::getVar('__browser');
+    }
+    
+    static public function isIExplorer()
+    {
+        return self::getVar('__isIExplorer');
+    }
+
     static public function setCompanyId( $id_company )
     {
         self::setVar( '__id_company', $id_company );

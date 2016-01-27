@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Helper_App_Browser
+class Helper_Browser
 {
 
     static public function getBrowser( )
