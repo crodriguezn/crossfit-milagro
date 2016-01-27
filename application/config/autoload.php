@@ -56,7 +56,7 @@ $autoload['libraries'] = array(
     // SYSTEM
     'upload',
     // APPLICATION
-    'libsession'
+    'libsession','libbrowscap','libarchivo','library_jasperstarter'
 );
 
 
