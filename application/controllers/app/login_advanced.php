@@ -10,7 +10,7 @@ class Login_Advanced extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->browser_message = Helper_App_Browser::obtener_browser();
+        $this->browser_message = Helper_App_Browser::isIExplorer();
         
         if( !Helper_App_Session::isLogin() )
         {
