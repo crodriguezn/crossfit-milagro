@@ -1,0 +1,20 @@
+/*.footer { background:none transparent; }
+.user-menu > a { background:none transparent; }
+.user-info { color:#2e2e2e; }
+.user-info span { color:#d82929; }
+.navigation > li.active:focus > a, .navigation > li.active:hover > a, .navigation > li.active > a { background:none #4c4b4b; }
+.navigation > li > a.level-opened { background:none #4c4b4b; }
+.sidebar-wide .sidebar { background:none #2e2e2e; }
+.panel-info > .panel-heading { background:none #2e2e2e }
+.breadcrumb-line { background:none #fcf3d4; border:1px solid #f07373; }
+.modal-header { background:none #2e2e2e; }
+.panel-info { border-color:#2e2e2e; }
+.select2-container .select2-choice > .select2-chosen { text-transform:none; }
+
+.cah-bg { background:url(../img/bg_interna.jpg) transparent; }
+.cah-bg-black { background:none #2e2e2e; }
+.cah-bg-red { background:none #d82929; }
+.cah-bg-yellow { background:none #f6c214; }
+.cah-color-black { color:#2e2e2e; }
+.cah-color-red { color:#d82929; }
+.cah-color-yellow { color:#f6c214; }*/
