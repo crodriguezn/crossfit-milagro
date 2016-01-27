@@ -1,0 +1,2 @@
+var Log_View = {
+};
