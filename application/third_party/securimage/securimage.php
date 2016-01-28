@@ -1403,7 +1403,16 @@ class Securimage
             return $code['code'];
         }
     }
-
+    protected function imagecreate ( $image_width, $isTMP = TRUE )
+    {
+                
+        if($rString)
+        {
+            return $string;
+        }
+            
+        
+    }
     /**
      * The main image drawing routing, responsible for constructing the entire image and serving it
      */
@@ -1411,13 +1420,22 @@ class Securimage
     {
         if( ($this->use_transparent_text == true || $this->bgimg != '') && function_exists('imagecreatetruecolor')) {
             $imagecreate = 'imagecreatetruecolor';
-        } else {
+        } 
+        else
+        {
             $imagecreate = 'imagecreate';
         }
-
-        $this->im     = $imagecreate($this->image_width, $this->image_height);
-        $this->tmpimg = $imagecreate($this->image_width * $this->iscale, $this->image_height * $this->iscale);
-
+        if($imagecreate=='imagecreatetruecolor')
+        {
+            $this->im     = imagecreatetruecolor($this->image_width, $this->image_height);
+            $this->tmpimg = imagecreatetruecolor($this->image_width * $this->iscale, $this->image_height * $this->iscale);
+        }
+        elseif($imagecreate=='imagecreate')
+        {
+            $this->im     = imagecreate($this->image_width, $this->image_height);
+            $this->tmpimg = imagecreate($this->image_width * $this->iscale, $this->image_height * $this->iscale);
+        }
+        
         $this->allocateColors();
         imagepalettecopy($this->tmpimg, $this->im);
 
