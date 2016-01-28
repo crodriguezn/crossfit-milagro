@@ -23,16 +23,16 @@ class Ciudad_Model extends MY_Model
         
     }
 
-    /*function load($id_ciudad)
+    function loadArray($where = array(), $except_value = '', $except_by = 'id')
     {
-        $row = parent::load($id_ciudad);
-
+        $row = parent::loadArray($where, $except_value, $except_by);
+        
         $eCiudad = new eCiudad();
         $eCiudad->parseRow($row);
 
         return $eCiudad;
-    }*/
-
+    }
+    
     function save(eCiudad &$eCiudad)
     {
         try

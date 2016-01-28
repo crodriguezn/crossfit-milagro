@@ -19,6 +19,16 @@ class Company_Branch_Model extends MY_Model
         return $eCompanyBranch;
     }
     
+    function loadArray($where = array(), $except_value = '', $except_by = 'id') 
+    {
+        $row = parent::loadArray($where, $except_value, $except_by);
+        
+        $eCompanyBranch = new eCompanyBranch();
+        $eCompanyBranch->parseRow($row);
+        
+        return $eCompanyBranch;
+    }
+            
     function save( eCompanyBranch &$eCompanyBranch )
     {
         try

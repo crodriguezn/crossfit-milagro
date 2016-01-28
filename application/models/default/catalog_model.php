@@ -8,6 +8,25 @@ class Catalog_Model extends MY_Model
     {
         parent::__construct();
     }
+    
+    function load($value, $by = 'id', $except_value = '', $except_by = 'id') 
+    {
+        $row = parent::load($value, $by, $except_value, $except_by);
+        $eCatalog = new eCatalog();
+        $eCatalog->parseRow($row);
+        
+        return $eCatalog;
+    }
+
+    function loadArray($where = array(), $except_value = '', $except_by = 'id')
+    {
+        $row = parent::loadArray($where, $except_value, $except_by);
+        
+        $eCatalog = new eCatalog();
+        $eCatalog->parseRow($row);
+        
+        return $eCatalog;
+    }
 
     public function listByType($catalog_type_code)
     {

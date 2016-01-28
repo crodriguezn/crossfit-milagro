@@ -113,7 +113,7 @@ class MY_Model extends CI_Model
 
     function loadArray($where = array(), $except_value='', $except_by='id')
     {
-        $db =& $this->getConnection();
+        $db = $this->getConnection();
         
         if(is_array($where))
         {

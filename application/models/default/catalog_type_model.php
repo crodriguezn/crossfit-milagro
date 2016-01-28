@@ -9,6 +9,14 @@ class Catalog_Type_Model extends MY_Model
         parent::__construct();
     }
     
+    function load($value, $by = 'id', $except_value = '', $except_by = 'id') {
+        return parent::load($value, $by, $except_value, $except_by);
+    }
+    
+    function loadArray($where = array(), $except_value = '', $except_by = 'id') {
+        return parent::loadArray($where, $except_value, $except_by);
+    }
+            
     function listAll($txt_filter='', $limit=NULL, $offset=NULL)
     {
         $query = $this->db->query( $this->queryAll($txt_filter, $limit, $offset) );
