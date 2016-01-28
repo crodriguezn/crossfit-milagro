@@ -8,11 +8,11 @@ class Provincia_Model extends MY_Model
     {
         parent::__construct();
     }
-
-    function load( $id_provincia )
+    
+    function load($value, $by = 'id', $except_value = '', $except_by = 'id') 
     {
-        $row = parent::load($id_provincia);
-
+        $row =  parent::load($value, $by, $except_value, $except_by);
+        
         $eProvincia = new eProvincia();
         $eProvincia->parseRow($row);
         

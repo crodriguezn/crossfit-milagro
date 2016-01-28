@@ -9,15 +9,16 @@ class Pais_Model extends MY_Model
         parent::__construct();
     }
 
-    function load( $id_pais )
+    function load($value, $by = 'id', $except_value = '', $except_by = 'id') 
     {
-        $row = parent::load($id_pais);
-
+        $row =  parent::load($value, $by, $except_value, $except_by);
+        
         $ePais = new ePais();
         $ePais->parseRow($row);
         
         return $ePais;
     }
+        
     
     function save( ePais &$ePais )
     {
