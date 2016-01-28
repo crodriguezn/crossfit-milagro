@@ -1,6 +1,17 @@
 {
-    "name": "Desarrollador/crossfit",
-    "description": "A short description of what your package does",
+    "name": "crodriguezn/crossfit-milagro",
+    "type": "system",
+    "description": "Sistema de Control de WOD",
+    "keywords": ["crossfit-milagro", "crossfit", "milagro", "ecuador"],
+    "homepage": "https://github.com/crodriguezn/crossfit-milagro.git",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Luis Rodriguez",
+            "email": "taylorluis93@gmail.com",
+            "homepage": ""
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
         "raveren/kint": "0.9",
