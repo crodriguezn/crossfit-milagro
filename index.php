@@ -24,6 +24,14 @@ date_default_timezone_set('America/Guayaquil');
     define('TIME_LIMIT', 360000);
     ini_set('memory_limit', '2048M');
     
+//    // En este ejemplo se carga una extensión u otra dependiendo del sistema operativo
+//    if (!extension_loaded('gd')) {
+//        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+//            dl('php_gd2.dll');
+//        } else {
+//            dl('gd.so');
+//        }
+//    }
     
 /*
  *---------------------------------------------------------------
