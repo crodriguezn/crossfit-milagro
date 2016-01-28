@@ -29,7 +29,13 @@ class Helper_Captcha
         $img->num_lines = 7;
         $img->line_color = new Securimage_Color("#eaeaea");
         $img->signature_color = new Securimage_Color(rand(0, 64), rand(64, 128), rand(128, 255));
+        ob_start();   // start the output buffer
         $img->show( BASEPATH . '../application/third_party/securimage/backgrounds/bg6.jpg'); // alternate use:  $img->show('/path/to/background_image.jpg');
+        $imgBinary = ob_get_contents(); // get contents of the buffer
+        ob_end_clean(); // turn off buffering and clear the buffer
+        header('Content-Type: image/png');
+        header('Content-Length: ' . strlen($imgBinary));
+        echo $imgBinary;
     }
     
 //    static public function create( $captcha_name, $subfolder='' )
