@@ -35,7 +35,7 @@ class Helper_Captcha
         ob_end_clean(); // turn off buffering and clear the buffer
         header('Content-Type: image/png');
         header('Content-Length: ' . strlen($imgBinary));
-        var_dump(gd_info());
+        
         echo $imgBinary;
     }
     

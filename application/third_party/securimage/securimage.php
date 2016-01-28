@@ -1419,18 +1419,10 @@ class Securimage
     protected function doImage()
     {
         if( ($this->use_transparent_text == true || $this->bgimg != '') && function_exists('imagecreatetruecolor')) {
-            $imagecreate = 'imagecreatetruecolor';
-        } 
-        else
-        {
-            $imagecreate = 'imagecreate';
-        }
-        if($imagecreate=='imagecreatetruecolor')
-        {
             $this->im     = imagecreatetruecolor($this->image_width, $this->image_height);
             $this->tmpimg = imagecreatetruecolor($this->image_width * $this->iscale, $this->image_height * $this->iscale);
-        }
-        elseif($imagecreate=='imagecreate')
+        } 
+        else
         {
             $this->im     = imagecreate($this->image_width, $this->image_height);
             $this->tmpimg = imagecreate($this->image_width * $this->iscale, $this->image_height * $this->iscale);
