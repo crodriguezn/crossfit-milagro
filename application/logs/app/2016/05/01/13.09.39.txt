@@ -1,0 +1,8 @@
+========================2016-05-01 13:09:39========================
+
+UPDATE "profile" SET "name" = 'Administrador', "description" = 'Administrador del Sistema', "isAdmin" = '0', "isSuperAdmin" = '0', "isActive" = '1', "isEditable" = '1', "id_rol" = '2' WHERE "id" =  '3'
+
+Desde la IP: ::1
+
+=======================================================================
+

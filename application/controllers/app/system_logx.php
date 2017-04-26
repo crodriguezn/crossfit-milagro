@@ -11,7 +11,7 @@ class System_LogX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/system_log/permission.php');
+        $this->load->file('application/modules/app/system/log/permission.php');
         $this->permission = new System_Log_Permission( $this->name_key );
     }
     
@@ -48,6 +48,9 @@ class System_LogX extends MY_Controller
                 break;
             case 'load-file':
                 $this->loadFile();
+                break;
+            case 'load-file-t':
+                $this->loadFileT();
                 break;
             default:
                 $this->noaction($action);
@@ -110,9 +113,13 @@ class System_LogX extends MY_Controller
         $resAjax = new Response_Ajax();
         if( file_exists( $path ) && $dir != '.' && $dir != '..' && !is_dir( $path ) ) 
         {
-            $fp = fopen( $path,'r' );
+            //$fp = fopen( $path,'r' );
             //leemos el archivo
-            $texto = fread($fp, filesize($path));
+            //$texto = fread($fp, filesize($path));
+            
+            
+            //$texto = file_get_contents($path);
+            //print_r($texto);
             $name = basename($path);
             $size = filesize($path); /*bytes*/
             $size_file = Helper_File::round_size($size, 2);
@@ -130,8 +137,31 @@ class System_LogX extends MY_Controller
             $resAjax->message( 'Error de Archivo' );
         }
         
-        $resAjax->form('file', array('text'=>print_r($texto,TRUE), 'name'=>$name, 'path'=>$dir, 'size'=>$size_file));
+        $resAjax->form('file', array('name'=>$name, 'path'=>$dir, 'size'=>$size_file));
         echo $resAjax->toJsonEncode();
+    }
+    
+    private function loadFileT()
+    {
+        $texto = '';
+        $dir = $this->input->post('path');
+        $root = BASEPATH."../application/logs".( empty($dir)?'/':"/$dir" );
+        $path = $root;
+        $return = NULL;
+        if( file_exists( $path ) && $dir != '.' && $dir != '..' && !is_dir( $path ) ) 
+        {
+            //$fp = fopen( $path,'r' );
+            
+            $texto = file_get_contents($path);
+            
+            $return = print_r($texto, TRUE);
+        }
+        else 
+        {
+            $return = 'error';
+        }
+        
+        echo $return;
     }
     
 }

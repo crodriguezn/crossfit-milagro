@@ -1,0 +1,8 @@
+========================2017-04-21 16:53:57========================
+
+INSERT INTO "profile" ("name", "description", "isAdmin", "isSuperAdmin", "isActive", "isEditable", "id_rol", "id") VALUES ('Entrenador', 'Entrenador', 0, 0, '1', 1, '5', 5)
+
+Desde la IP: ::1
+
+=======================================================================
+

@@ -1,6 +1,7 @@
 <?php $resource_path = "resources/assets/app" . '/'; ?>
 <?php
 /* @var $eCompany eCompany */
+/* @var $eConfigurationSystem eConfigurationSystem */
 /* @var $eCompanyBranch eCompanyBranch */
 /* @var $eUser eUser */
 /* @var $ePerson ePerson */
@@ -15,7 +16,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo empty($eCompany->name) ? 'Sistema de Venta' : $eCompany->name ?></title>
+        <title><?php echo empty($eConfigurationSystem->name_key_system) ? 'SysControl of BOX' : $eConfigurationSystem->name_key_system ?></title>
         <link rel="icon" href="<?php echo base_url("resources/img/favicon.ico"); ?>" type="image/x-icon"/>
         <link href="<?php echo $resource_path; ?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resource_path; ?>css/londinium-theme.min.css" rel="stylesheet" type="text/css">
@@ -61,7 +62,7 @@
         <!-- Navbar -->
         <div class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><?php echo empty($eConfigurationSystem->name_system) ? 'Sistema de Venta' : $eConfigurationSystem->name_system ?></a>
+                <a class="navbar-brand" href="#"><?php echo empty($eConfigurationSystem->name_system) ? 'Sistema de Control del BOX' : $eConfigurationSystem->name_system ?></a>
             </div>
 
         </div>
@@ -73,7 +74,15 @@
                 <div class="well">
                     <div class="thumbnail">
                         <div class="thumb">
-                            <?php $img_user = (file_exists('resources/uploads/person/' . $ePerson->id . '/profile.png')) ? '' : 'resources/assets/app/images/demo/users/user2.jpg'; ?>
+                            <?php
+                            if (file_exists('resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture)) {
+                                $img_user = 'resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture;
+                            } else {
+                                echo $img_user = $resources_path . '/images/demo/users/user2.jpg';
+                            }
+
+                            //$img_user = (file_exists('resources/uploads/person/' . $ePerson->id . '/profile.png')) ? '' : 'resources/assets/app/images/demo/users/user2.jpg';
+                            ?>
                             <img src="<?php echo $img_user; ?>">
                         </div>
                         <div class="caption text-center">
@@ -104,19 +113,19 @@
             <div class="pull-left">
                 <span>&copy; 2015 - <?php echo date('Y') + 1; ?> . Developer by Luis Rodriguez, &numsp; </span>
                 <span>
-                    <?php echo ENVIRONMENT == 'development' ? 'Ambiente de Desarrollo' : 'Ambiente de Producción' ?>
+<?php echo ENVIRONMENT == 'development' ? 'Ambiente de Desarrollo' : 'Ambiente de Producción' ?>
                 </span>
             </div>
             <div class="pull-right icons-group"> 
                 <a href="https://twitter.com/TRodriguezN" target="_blank" title="Twitter" class="tip">
                     <i class="icon-twitter"></i>
                 </a> 
-                <a href="https://www.facebook.com/Luch1t0" target="_blank" title="Facebook" class="tip">
+                <a href="https://www.facebook.com/crodriguezn.ec" target="_blank" title="Facebook" class="tip">
                     <i class="icon-facebook"></i>
                 </a> <a href="https://www.instagram.com/crodriguezn90/" target="_blank" title="Istragram" class="tip">
                     <i class="icon-cog3"></i>
                 </a> 
-                <a href="http://depwebrodriguez.honor.es/" target="_blank" title="Luis Rodriguez" class="tip">
+                <a href="http://luis-rodriguez-ec.herokuapp.com/site/index" target="_blank" title="Luis Rodriguez" class="tip">
                     <i class="icon-link"></i>
                 </a>
                 <a title="Aplicación" class="tip"> <?php echo '<i class="icon-screen"></i> ' . $eAppVersion->name ?></a>
@@ -124,7 +133,7 @@
         </div>
         <!-- /footer -->
         <?php // =========================================================================== ?>
-        <?php // =========================================================================== ?>
+<?php // ===========================================================================  ?>
 
         <script type="text/javascript">
             Core.init();

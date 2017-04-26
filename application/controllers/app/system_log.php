@@ -11,7 +11,7 @@ class System_Log extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_log/permission.php');
+        $this->load->file('application/modules/app/system/log/permission.php');
         $this->permission = new System_Log_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -42,7 +42,7 @@ class System_Log extends MY_Controller
 
     public function index()
     {
-        Helper_App_View::layout('app/html/pages/system_log/page');
+        Helper_App_View::layout('app/html/pages/system/log/page');
     }
     
     public function mvcjs()
@@ -55,6 +55,6 @@ class System_Log extends MY_Controller
             'permissions' => $this->permission->toArray(),
         );
         
-        Helper_App_JS::showMVC('system_log', $params);
+        Helper_App_JS::showMVC('system/log', $params);
     }
 }

@@ -29,16 +29,16 @@ class Dashboard extends MY_Controller
 
     public function index()
     {
-        Helper_App_View::layout('app/html/pages/dashboard');
+        Helper_App_View::layout('app/html/pages/dashboard/page');
     }
     
     public function mvcjs()
     {
-        $js_path = 'dashboard';
-        
         $params = array(
+            'link' => $this->link,
+            'linkx' => $this->linkx
         );
         
-        Helper_App_JS::showMVC($js_path, $params);
+        Helper_App_JS::showMVC('dashboard', $params);
     }
 }

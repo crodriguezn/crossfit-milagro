@@ -1,0 +1,8 @@
+========================2016-04-17 11:25:06========================
+
+UPDATE "profile" SET "name" = 'Cliente', "description" = 'Cliente Bajo Restrinccion', "isAdmin" = '0', "isSuperAdmin" = '0', "isActive" = '1', "isEditable" = '1', "id_rol" = '3' WHERE "id" =  '2'
+
+Desde la IP: ::1
+
+=======================================================================
+

@@ -1,0 +1,208 @@
+========================2016-02-23 14:25:19========================
+
+Array
+(
+    [app] => Array
+        (
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 1
+            [__id_user] => 1
+            [__id_person] => 1
+            [__isSuperAdmin] => 1
+            [__isAdmin] => 1
+            [__id_profile] => 1
+            [__last_time] => 2016-02-23 14:25:09
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => stdClass Object
+                (
+                    [browser_name_regex] => ^mozilla/5\.0 \(.*windows nt 6\.2.*wow64.*\) applewebkit/.* \(khtml, like gecko\) chrome/.*safari/.*$
+                    [browser_name_pattern] => Mozilla/5.0 (*Windows NT 6.2*WOW64*) AppleWebKit/* (KHTML, like Gecko) Chrome/*Safari/*
+                    [parent] => Chrome Generic
+                    [browser_bits] => 32
+                    [platform] => Win8
+                    [platform_version] => 6.2
+                    [platform_description] => Windows 8
+                    [platform_bits] => 64
+                    [platform_maker] => Microsoft Corporation
+                    [win64] => true
+                    [device_name] => Windows Desktop
+                    [device_code_name] => Windows Desktop
+                    [comment] => Chrome Generic
+                    [browser] => Chrome
+                    [browser_type] => Browser
+                    [browser_maker] => Google Inc
+                    [frames] => true
+                    [iframes] => true
+                    [tables] => true
+                    [cookies] => true
+                    [javascript] => true
+                    [javaapplets] => true
+                    [cssversion] => 1
+                    [device_maker] => Various
+                    [device_type] => Desktop
+                    [device_pointing_method] => mouse
+                    [renderingengine_name] => Blink
+                    [renderingengine_description] => a WebKit Fork by Google
+                    [renderingengine_maker] => Google Inc
+                    [browser_modus] => unknown
+                    [version] => 0.0
+                    [majorver] => 0
+                    [minorver] => 0
+                    [alpha] => false
+                    [beta] => false
+                    [win16] => false
+                    [win32] => false
+                    [backgroundsounds] => false
+                    [vbscript] => false
+                    [activexcontrols] => false
+                    [ismobiledevice] => false
+                    [istablet] => false
+                    [issyndicationreader] => false
+                    [crawler] => false
+                    [aolversion] => 0
+                    [device_brand_name] => unknown
+                    [renderingengine_version] => unknown
+                )
+
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                )
+
+            [__permissions] => Array
+                (
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [security_rol] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [crossfit_today_s_wod] => Array
+                        (
+                            [0] => access
+                            [1] => new
+                            [2] => update
+                        )
+
+                    [utility_company_and_company_branch] => Array
+                        (
+                            [0] => update_logo_company
+                            [1] => create_branch
+                            [2] => access_branch
+                            [3] => access_company
+                            [4] => update_branch
+                            [5] => update_company
+                            [6] => access
+                        )
+
+                    [system_module] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_profile] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                            [3] => view_permissions
+                            [4] => update_permissions
+                        )
+
+                    [user_settings] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [utility] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_log] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                            [0] => access
+                            [1] => view
+                        )
+
+                    [security] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [crossfit] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+

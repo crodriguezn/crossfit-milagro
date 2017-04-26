@@ -108,7 +108,16 @@ class LayoutX extends MY_Controller
         
         Helper_App_Session::setProfileId($id_profile);
         
-        Helper_App_Session::buildPermissionsByProfile();
+        $oBusP = Business_App_Profile::loadProfile($id_profile);
+        $dataProfile = $oBusP->data();
+        /* @var $eProfile eProfile*/
+        $eProfile = $dataProfile['eProfile'];
+        
+        Helper_App_Session::isSuperAdminProfile( $eProfile->isSuperAdmin==1 );
+        Helper_App_Session::isAdminProfile( $eProfile->isAdmin==1 );
+        
+        
+        Helper_App_Session::setVar('__permissions', Helper_App_Session::buildPermissionsByProfile());
         
         Helper_App_Session::debugAll();
         

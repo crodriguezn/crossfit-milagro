@@ -1,0 +1,52 @@
+========================2016-04-23 14:49:37========================
+
+
+            SELECT 
+                "u"."id" AS "u_id","u"."id_person" AS "u_id_person","u"."username" AS "u_username","u"."password" AS "u_password","p"."id" AS "p_id","p"."name" AS "p_name","p"."surname" AS "p_surname","p"."tipo_documento" AS "p_tipo_documento","p"."document" AS "p_document","p"."birthday" AS "p_birthday","p"."gender" AS "p_gender","p"."address" AS "p_address","p"."phone_cell" AS "p_phone_cell","p"."email" AS "p_email","p"."estado_civil" AS "p_estado_civil","p"."tipo_sangre" AS "p_tipo_sangre","p"."id_ciudad" AS "p_id_ciudad"
+            FROM "user" AS "u"
+                INNER JOIN "person" AS "p" ON "p"."id" = "u"."id_person" 
+                INNER JOIN "user_profile" AS "up" ON "up"."id_user" = "u"."id" 
+                INNER JOIN "user_profile__company_branch" AS "up_cb" ON "up_cb"."id_user_profile" = "up"."id" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') OR 
+                    UPPER("u"."username") LIKE UPPER('%%')
+                )
+            
+             GROUP BY "u"."id", "p"."id" 
+             ORDER BY "surname" ASC 
+             LIMIT 10 OFFSET 0 
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-23 14:49:37========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "user" AS "u"
+                INNER JOIN "person" AS "p" ON "p"."id" = "u"."id_person" 
+                INNER JOIN "user_profile" AS "up" ON "up"."id_user" = "u"."id" 
+                INNER JOIN "user_profile__company_branch" AS "up_cb" ON "up_cb"."id_user_profile" = "up"."id" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') OR 
+                    UPPER("u"."username") LIKE UPPER('%%')
+                )
+            
+            
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

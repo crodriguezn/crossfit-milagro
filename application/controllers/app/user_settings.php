@@ -11,7 +11,7 @@ class User_Settings extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/user_settings/permission.php');
+        $this->load->file('application/modules/app/user/settings/permission.php');
         $this->permission = new User_Settings_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -42,13 +42,13 @@ class User_Settings extends MY_Controller
 
     public function index()
     {
-        Helper_App_View::layout('app/html/pages/user_settings/page');
+        Helper_App_View::layout('app/html/pages/user/settings/page');
     }
     
     public function mvcjs()
     {
         
-        $this->load->file('application/modules/app/user_settings/form/user_settings_form.php');
+        $this->load->file('application/modules/app/user/settings/form/user_settings_form.php');
         $data_form= new Form_App_User_Settings();
         
       
@@ -59,6 +59,6 @@ class User_Settings extends MY_Controller
             'user_settings_form_default' => $data_form->toArray()
         );
         
-        Helper_App_JS::showMVC('user_settings', $params);
+        Helper_App_JS::showMVC('user/settings', $params);
     }
 }

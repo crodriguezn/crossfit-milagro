@@ -11,7 +11,7 @@ class Security_BinnacleX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/security_binnacle/permission.php');
+        $this->load->file('application/modules/app/security/binnacle/permission.php');
         $this->permission = new Security_Binnacle_Permission( $this->name_key );
         $this->permission->view = Helper_App_Session::isPermissionForModule($this->name_key,'view');
     }
@@ -133,7 +133,7 @@ class Security_BinnacleX extends MY_Controller
     
     private function loadBinnacle()
     {
-        $this->load->file('application/modules/app/security_binnacle/form/binnacle_form.php');
+        $this->load->file('application/modules/app/security/binnacle/form/binnacle_form.php');
         
         $resAjax = new Response_Ajax();
         

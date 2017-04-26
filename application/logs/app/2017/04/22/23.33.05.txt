@@ -1,0 +1,48 @@
+========================2017-04-22 23:33:05========================
+
+UPDATE "module" SET "id_parent" = '3', "name" = 'Perfiles', "description" = 'SubMódulo a Perfiles', "name_key" = 'security_profile', "isAdmin" = '0', "isActive" = '1', "name_icon" = NULL, "modified" = '2017-04-22 23:04:33' WHERE "id" =  '5'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 23:33:05========================
+
+UPDATE "permission" SET "name" = 'Acceso', "description" = 'Acceso al SubMódulo de Perfiles', "name_key" = 'access', "id_module" = '5', "modified" = '2017-04-22 23:04:33' WHERE "id" =  '6'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 23:33:05========================
+
+UPDATE "permission" SET "name" = 'Crear', "description" = 'Crear un Perfil', "name_key" = 'create', "id_module" = '5', "modified" = '2017-04-22 23:04:33' WHERE "id" =  '7'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 23:33:05========================
+
+UPDATE "permission" SET "name" = 'Editar/Actualizar', "description" = 'Editar/Actualizar un Perfil', "name_key" = 'update', "id_module" = '5', "modified" = '2017-04-22 23:04:33' WHERE "id" =  '8'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 23:33:05========================
+
+UPDATE "permission" SET "name" = 'Editar/Actualizar Permisos', "description" = 'Editar/Actualizar Permisos', "name_key" = 'update_permissions', "id_module" = '5', "modified" = '2017-04-22 23:04:33' WHERE "id" =  '11'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 23:33:05========================
+
+UPDATE "permission" SET "name" = 'Acceso a Permisos', "description" = 'Acceso a los permisos', "name_key" = 'access_permissions', "id_module" = '5', "modified" = '2017-04-22 23:04:33' WHERE "id" =  '10'
+
+Desde la IP: ::1
+
+=======================================================================
+

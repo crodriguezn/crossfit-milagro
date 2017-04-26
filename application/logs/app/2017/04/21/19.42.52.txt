@@ -1,0 +1,41 @@
+========================2017-04-21 19:42:52========================
+
+INSERT INTO "person" ("name", "surname", "tipo_documento", "document", "birthday", "gender", "address", "phone_cell", "email", "estado_civil", "tipo_sangre", "id_ciudad", "id", "created", "modified") VALUES ('Joshua', 'Bravo Neira', 'TIPO_IDENT_CEDULA', '0927576505', '1996-12-12', 'GENDER_MALE', 'Milgro', '', 'jbravoneira@gmail.com', 'ESTADO_CIVIL_SOLTERO', 'TIPO_SANGRE_A+', '47949', 6, '2017-04-21 19:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 19:42:52========================
+
+INSERT INTO "user" ("id_person", "username", "password", "id", "created", "modified") VALUES (6, 'jbravo', 'e10adc3949ba59abbe56e057f20f883e', 6, '2017-04-21 19:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 19:42:52========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id", "created", "modified") VALUES (6, '5', '1', 7, '2017-04-21 19:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 19:42:52========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  7
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 19:42:52========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id", "created", "modified") VALUES (7, '1', 13, '2017-04-21 19:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+

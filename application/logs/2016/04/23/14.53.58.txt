@@ -1,0 +1,40 @@
+========================2016-04-23 14:53:58========================
+
+
+            SELECT 
+                *
+            FROM "rol"
+            WHERE 1=1
+                AND (
+                    UPPER("name") LIKE UPPER('%%') OR
+                    UPPER("name_key") LIKE UPPER('%%')
+                )
+            
+             ORDER BY "name" ASC 
+             LIMIT 10 OFFSET 0 
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-23 14:53:58========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "rol"
+            WHERE 1=1
+                AND (
+                    UPPER("name") LIKE UPPER('%%') OR
+                    UPPER("name_key") LIKE UPPER('%%')
+                )
+            
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

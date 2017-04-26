@@ -1,0 +1,32 @@
+========================2017-04-17 22:25:11========================
+
+UPDATE "module" SET "id_parent" = '20', "name" = 'Calendario', "description" = 'Gestión de Calendario', "name_key" = 'management_calendar', "isAdmin" = '0', "isActive" = '1', "name_icon" = NULL WHERE "id" =  '19'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-17 22:25:11========================
+
+UPDATE "permission" SET "name" = 'Editar/Actualizar', "description" = 'Editar/Actualizar calendario', "name_key" = 'update', "id_module" = '19' WHERE "id" =  '43'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-17 22:25:11========================
+
+UPDATE "permission" SET "name" = 'Crear/Nuevo', "description" = 'Crear un nuevo evento en el calendario', "name_key" = 'create', "id_module" = '19' WHERE "id" =  '42'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-17 22:25:11========================
+
+UPDATE "permission" SET "name" = 'Acceso', "description" = 'Acceso al submodulo de calendario', "name_key" = 'access', "id_module" = '19' WHERE "id" =  '44'
+
+Desde la IP: ::1
+
+=======================================================================
+

@@ -3,7 +3,7 @@
 class Helper_App_Session
 {
     
-    static protected $params_session = array('session_group'=>'app');
+    static protected $params_session = array('session_group'=>'app_crossfit');
     
     static protected $msgError = 'Problemas de inicio de sesión:';
 
@@ -44,6 +44,7 @@ class Helper_App_Session
         $MY->libsession->setSessionGroup( self::$params_session['session_group'] );
         $info = array(self::$params_session['session_group']=>$MY->libsession->getAll());
         Helper_Log::write( print_r($info,TRUE) );
+        //Helper_Log::write(print_r($MY->libsession->getFull(), TRUE));
         Helper_App_Log::write( $info, TRUE, Helper_App_Log::LOG_LOGIN );
     }
     
@@ -51,21 +52,25 @@ class Helper_App_Session
     
     static public function init( $id_company, $id_user )
     {
+        $MY =& MY_Controller::get_instance();
         self::setVars(array(
-            '__id_company'          => $id_company,
-            '__id_company_branch'   => NULL,
-            '__id_rol'              => NULL,
-            '__id_user'             => $id_user,
-            '__id_person'           => NULL,
-            '__isSuperAdmin'        => FALSE,
-            '__isAdmin'             => FALSE,
-            '__id_profile'          => NULL,
-            '__last_time'           => date('Y-m-d H:i:s'),
-            '__inInactivity'        => TRUE,
-            '__isBlock'             => FALSE,
-            '__id_system'           => Helper_Config::getSystemId(),
-            '__isIExplorer'         => Helper_Browser::isIExplorer(),
-            '__browser'             => Helper_Browser::getBrowser()
+            '__id_session'              => self::getSessionID(),
+            '__id_company'              => $id_company,
+            '__id_company_branch'       => NULL,
+            '__id_rol'                  => NULL,
+            '__id_user'                 => $id_user,
+            '__user_profile_picture'    => NULL,
+            '__id_person'               => NULL,
+            '__isSuperAdmin'            => FALSE,
+            '__isAdmin'                 => FALSE,
+            '__id_profile'              => NULL,
+            '__last_time'               => date('Y-m-d H:i:s'),
+            '__ip'                      => $MY->input->ip_address(), 
+            '__inInactivity'            => TRUE,
+            '__isBlock'                 => FALSE,
+            '__id_system'               => Helper_Config::getSystemId(),
+            '__isIExplorer'             => Helper_Browser::isIExplorer(),
+            '__browser'                 => Helper_Browser::getBrowser()
         ));
         self::buildData();
         self::debugAll();
@@ -134,6 +139,8 @@ class Helper_App_Session
                 throw new Exception(self::$msgError + "001 --Usuario-- NO FOUND");
             }
             
+            self::setUserProfilePicture($eUser->name_picture);
+            
             // *******************
             // PERSON
             // *******************
@@ -187,8 +194,8 @@ class Helper_App_Session
             
             $eProfile = $mProfile->load($id_profile);
             
-            self::isSuperAdminProfile( $eProfile->isSuperAdmin == 1 );
-            self::isAdminProfile( $eProfile->isAdmin == 1 );
+            self::isSuperAdminProfile( $eProfile->isSuperAdmin==1 );
+            self::isAdminProfile( $eProfile->isAdmin==1 );
             
             
             // *******************
@@ -310,7 +317,10 @@ class Helper_App_Session
         $isSuperAdminProfile = self::isSuperAdminProfile();
         $isAdminProfile      = self::isAdminProfile();
         
-        $eModules = $mModule->listAll( $isSuperAdminProfile ? TRUE : FALSE, 1 ); // module assigned to company
+        
+        
+        
+        $eModules = $mModule->listAll( $isSuperAdminProfile==1 ? TRUE : FALSE, 1 ); // module assigned to company
         
         $arrPermissionResult = array();
         if( !empty($eModules) )
@@ -349,7 +359,7 @@ class Helper_App_Session
     
     static public function isLogin()
     {
-        return self::getUserId() !== FALSE;
+        return self::getUserId() !== FALSE && self::getVar('__id_session')===self::getSessionID();
     }
     
     static public function logout()
@@ -403,6 +413,16 @@ class Helper_App_Session
     static public function getUser()
     {
         return self::getVar('__user');
+    }
+    
+    static public function getUserProfilePicture()
+    {
+        return self::getVar('__user_profile_picture');
+    }
+    
+    static public function setUserProfilePicture($name)
+    {
+        self::setVar('__user_profile_picture', $name);
     }
     
     static public function setCompanyBranchId( $id_company_branch )
@@ -530,16 +550,19 @@ class Helper_App_Session
         }
         
         self::setVar('__isSuperAdmin', $isSuperAdminProfile);
+        
     }
     
     static public function isAdminProfile( $isAdminProfile=NULL )
     {
+        
         if( !is_bool($isAdminProfile) )
         {
             return self::getVar('__isAdmin');
+            
         }
-        
         self::setVar('__isAdmin', $isAdminProfile);
+        
     }
     
     // ======================================================
@@ -655,6 +678,6 @@ class Helper_App_Session
     {
         $MY =& MY_Controller::get_instance();
         
-        return $MY->libsession->id();
+        return $MY->libsession->id().Helper_Config::getEncryptionKey();
     }
 }

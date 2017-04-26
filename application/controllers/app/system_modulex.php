@@ -11,7 +11,7 @@ class System_ModuleX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_module/permission.php');
+        $this->load->file('application/modules/app/system/module/permission.php');
         $this->permission = new System_Module_Permission( $this->name_key );
         
     }
@@ -81,7 +81,7 @@ class System_ModuleX extends MY_Controller
     
     private function listModulesSubmodules()
     {
-        $this->load->file('application/modules/app/system_module/data/modules_submodules_data.php');
+        $this->load->file('application/modules/app/system/module/data/modules_submodules_data.php');
         
         $resAjax = new Response_Ajax();
         
@@ -165,7 +165,7 @@ class System_ModuleX extends MY_Controller
     
     private function loadModule()
     {
-        $this->load->file('application/modules/app/system_module/data/module_data.php');
+        $this->load->file('application/modules/app/system/module/data/module_data.php');
         
         $resAjax = new Response_Ajax();
         
@@ -203,7 +203,7 @@ class System_ModuleX extends MY_Controller
     
     private function saveModule()
     {
-        $this->load->file('application/modules/app/system_module/data/module_data.php');
+        $this->load->file('application/modules/app/system/module/data/module_data.php');
         
         $resAjax = new Response_Ajax();
         

@@ -1,7 +1,11 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+var Activity_Model = {
+    lastActivity: function (fSuccess, fFail)
+    {
+        Core.Ajax.post(
+                Core.site_url(Dashboard_Base.linkx + '/process/last-activity'),
+                {},
+                fSuccess,
+                fFail
+                );
+    }
+};

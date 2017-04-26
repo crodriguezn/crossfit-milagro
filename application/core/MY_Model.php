@@ -199,7 +199,7 @@ class MY_Model extends CI_Model
     function insert( $arrData )
     {
         $db =& $this->getConnection();
-        
+        $arrData['modified'] = NULL;
         if( $db->insert($this->table, $arrData) === FALSE )
         {
             Helper_Log::write( $this->messageError(__FUNCTION__,FALSE), Helper_Log::LOG_DB);
@@ -210,13 +210,29 @@ class MY_Model extends CI_Model
     function update( $arrData, $value, $by='id' )
     {
         $db = $this->getConnection();
-        
+        unset( $arrData['created'] );
         if( $db->update($this->table, $arrData, array($by=>$value)) === FALSE )
         {
             Helper_Log::write( $this->messageError(__FUNCTION__,FALSE), Helper_Log::LOG_DB);
             throw new Exception( $this->messageError(__FUNCTION__, TRUE) );
         }
     }
+    
+    function arrUpdate( $arrData, $where=array() )
+    {
+        //return $this->db->update_string($this->table, $arrData, $value);
+        
+        $db = $this->getConnection();
+        unset( $arrData['created'] );
+        $arrData['modified'] = date('Y-m-d H:i:s');
+        if( $db->update($this->table, $arrData, $where) === FALSE )
+        {
+            Helper_Log::write( $this->messageError(__FUNCTION__,FALSE), Helper_Log::LOG_DB);
+            throw new Exception( $this->messageError(__FUNCTION__, TRUE) );
+        }
+        
+    }
+    
     
     function delete( $value, $by='id' )
     {

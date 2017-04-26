@@ -2,7 +2,7 @@
 
 class Helper_App_View
 {
-    static private $htmlTitle = "Sistema de Control del WOD (Workout Of the Day)";
+    static private $htmlTitle = "Sistema de Control del BOX";
     //private $resources_path = 'resources/assets';
 
     static function view( $view, $arrParams=array(), $return=FALSE )

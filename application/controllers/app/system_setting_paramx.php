@@ -11,7 +11,7 @@ class System_Setting_ParamX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_setting_param/permission.php');
+        $this->load->file('application/modules/app/system/setting_param/permission.php');
         $this->permission = new System_Setting_Param_Permission( $this->name_key );
         $this->permission->update = Helper_App_Session::isPermissionForModule($this->name_key,'update');
         
@@ -69,7 +69,7 @@ class System_Setting_ParamX extends MY_Controller
     
     private function loadParam()
     {
-        $this->load->file('application/modules/app/system_setting_param/form/setting_param_form.php');
+        $this->load->file('application/modules/app/system/setting_param/form/setting_param_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -95,7 +95,7 @@ class System_Setting_ParamX extends MY_Controller
     
     private function saveParam()
     {
-        $this->load->file('application/modules/app/system_setting_param/form/setting_param_form.php');
+        $this->load->file('application/modules/app/system/setting_param/form/setting_param_form.php');
         
         $resAjax = new Response_Ajax();
         $frm_data = new Form_App_System_Setting_Param(TRUE);
@@ -115,7 +115,13 @@ class System_Setting_ParamX extends MY_Controller
             {
                 throw new Exception('Debe ingresar la información en todos los campos');
             }
-            if(!isset($_FILES[$logo]))
+            
+            /*if( !isset( $_FILES[$logo] ) )
+            {
+                throw new Exception('Ocurrio un error, Intentelo otra vez!');
+            }*/
+            
+            if(!empty($_FILES[$logo]['name']))
             {
                 $oBusUploadLogo = Business_App_Configuration_System::uploadLogo($id_system, $logo);
                 if( !$oBusUploadLogo->isSuccess() )
@@ -123,6 +129,7 @@ class System_Setting_ParamX extends MY_Controller
                     throw new Exception( $oBusUploadLogo->message() );
                 }
             }
+            
             $oBusLoadLogo = Business_App_Configuration_System::loadLogo($id_system);
             if( !$oBusLoadLogo->isSuccess() )
             {

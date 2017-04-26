@@ -1,0 +1,56 @@
+========================2017-04-23 13:35:19========================
+
+
+            SELECT 
+                "ch"."id" AS "ch_id","ch"."start_hour" AS "ch_start_hour","ch"."final_hour" AS "ch_final_hour","ch"."isActive" AS "ch_isActive","ch"."created" AS "ch_created","ch"."modified" AS "ch_modified","cd"."id" AS "cd_id","cd"."day" AS "cd_day","cd"."isActive" AS "cd_isActive","cd"."created" AS "cd_created","cd"."modified" AS "cd_modified","cs"."id" AS "cs_id","cs"."id_class_hour" AS "cs_id_class_hour","cs"."id_class_date" AS "cs_id_class_date","cs"."id_employee" AS "cs_id_employee","cs"."created" AS "cs_created","cs"."modified" AS "cs_modified","e"."id" AS "e_id","e"."id_person" AS "e_id_person","e"."date_registration" AS "e_date_registration","e"."salary" AS "e_salary","e"."isCoach" AS "e_isCoach","e"."created" AS "e_created","e"."modified" AS "e_modified","p"."id" AS "p_id","p"."name" AS "p_name","p"."surname" AS "p_surname","p"."tipo_documento" AS "p_tipo_documento","p"."document" AS "p_document","p"."birthday" AS "p_birthday","p"."gender" AS "p_gender","p"."address" AS "p_address","p"."phone_cell" AS "p_phone_cell","p"."email" AS "p_email","p"."estado_civil" AS "p_estado_civil","p"."tipo_sangre" AS "p_tipo_sangre","p"."id_ciudad" AS "p_id_ciudad","p"."created" AS "p_created","p"."modified" AS "p_modified"
+            FROM "class_scheduling" AS "cs"
+                INNER JOIN "class_hour" AS "ch" ON "ch"."id" = "cs"."id_class_hour"                 
+                INNER JOIN "class_date" AS "cd" ON "cd"."id" = "cs"."id_class_date" 
+                INNER JOIN "employee" AS "e" ON "e"."id" = "cs"."id_employee" 
+                INNER JOIN "person" AS "p" ON "p"."id" = "e"."id_person" 
+            WHERE 1=1
+                AND (
+                    "ch"."start_hour" LIKE UPPER('%%') OR 
+                    "ch"."final_hour" LIKE UPPER('%%') OR 
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') 
+                )
+                 AND ("cd"."day" BETWEEN '2017-03-27' AND '2017-05-07') 
+                
+             ORDER BY "ch"."start_hour", "ch"."final_hour", "p"."surname" ASC 
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-23 13:35:19========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "class_scheduling" AS "cs"
+                INNER JOIN "class_hour" AS "ch" ON "ch"."id" = "cs"."id_class_hour"                 
+                INNER JOIN "class_date" AS "cd" ON "cd"."id" = "cs"."id_class_date" 
+                INNER JOIN "employee" AS "e" ON "e"."id" = "cs"."id_employee" 
+                INNER JOIN "person" AS "p" ON "p"."id" = "e"."id_person" 
+            WHERE 1=1
+                AND (
+                    "ch"."start_hour" LIKE UPPER('%%') OR 
+                    "ch"."final_hour" LIKE UPPER('%%') OR 
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') 
+                )
+                 AND ("cd"."day" BETWEEN '2017-03-27' AND '2017-05-07') 
+                
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

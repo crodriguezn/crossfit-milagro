@@ -5,6 +5,7 @@
 /* @var $ePerson ePerson */
 /* @var $eProfile eProfile */
 /* @var $eAppVersion eAppVersion */
+/* @var $eConfigurationSystem eConfigurationSystem */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,13 +15,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo $eCompany->name ?></title>
+        <title><?php echo $eConfigurationSystem->name_key_system ?></title>
         <link rel="icon" href="<?php echo base_url("resources/img/favicon.ico"); ?>" type="image/x-icon"/>
         <link href="<?php echo $resources_path; ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/londinium-theme.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/styles.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/icons.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resources_path; ?>/css/jqueryFileTree.css" rel="stylesheet" type="text/css">
+        <!--<link href="<?php echo $resources_path; ?>/css/fullcalendar-2.2.6/fullcalendar.min.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?php echo $resources_path; ?>/css/fullcalendar-2.2.6/fullcalendar.print.min.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?php echo $resources_path; ?>//fonts.googleapis.comcssfamily=Open+Sans400,300,600,700&amp;subset=latin,cyrillic-ext.css" rel="stylesheet" type="text/css">-->
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="resources/css/custom.css">
         <script type="text/javascript" src="resources/js/jquery/jquery-1.10.2.min.js"></script>
@@ -45,11 +49,12 @@
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/daterangepicker.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/fancybox.min.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/prettify.js"></script>
-        <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/moment.js"></script>
+        <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/calendar/moment_v2.0.0.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/jgrowl.min.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/datatables.min.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/colorpicker.js"></script>
-        <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/calendar/fullcalendar_v1.6.3.min.js"></script>
+        <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/calendar/fullcalendar_locale-es.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/timepicker.min.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/interface/collapsible.min.js"></script>
         <script type="text/javascript" src="<?php echo $resources_path; ?>/js/plugins/FileTree/jqueryFileTree.js"></script>
@@ -81,38 +86,80 @@
             <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="<?php echo site_url('app/dashboard'); ?>">
-                        <?php echo $eCompany->name_key; ?>
+                        <?php echo $eConfigurationSystem->name_system ?>
                     </a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar"><span class="sr-only">Toggle navigation</span><i class="icon-paragraph-justify2"></i></button>
+                    <a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar">
+                        <span class="sr-only">Toggle navigation</span><i class="icon-paragraph-justify2"></i>
+                    </button>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons">
                         <span class="sr-only">Toggle navigation</span><i class="icon-user"></i>
                     </button>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-roles">
-                        <span class="sr-only">Toggle navigation</span><i class="icon-cabinet"></i>
-                    </button>
-                    <button type="button" class="navbar-toggle collapsed" data-target="#navbar-sedes" data-toggle="collapse">
-                        <span class="sr-only">Toggle navigation</span><i class="icon-direction"></i>
-                    </button>
+                    <?php if ((count($combo_perfiles) > 1) || (count($combo_sedes) > 1)) { ?>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-profile-sucursal">
+                            <span class="sr-only">Toggle navigation</span><i class="icon-grid"></i>
+                        </button>
+                    <?php } ?>
                 </div>
+                <?php if ((count($combo_perfiles) > 1) || (count($combo_sedes) > 1)) { ?>
+                    <ul class="nav navbar-nav collapse" id="navbar-profile-sucursal">
+                        <?php if (count($combo_perfiles) > 1) { ?>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-list2"></i> <span>Perfil[<?php echo $eProfile->name ?>]</span> <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <?php
+                                    foreach ($combo_perfiles as $var) {
+                                        ?>
+                                        <li <?php if ($var['selected']) { ?> class="active" <?php } ?> >
+                                            <a <?php if (!$var['selected']) { ?> action="action-change-profile" _value="<?php echo $var['value']; ?>" <?php
+                                            } else {
+                                                echo 'href="javascript:void(0);"';
+                                            }
+                                            ?>>
+                                                                                     <?php echo $var['text'] ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <?php
+                        }
+                        if (count($combo_sedes) > 1) {
+                            ?>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-office"></i> <span>Sucursal[<?php echo $eCompanyBranch->name ?>]</span> <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <?php
+                                    foreach ($combo_sedes as $var) {
+                                        ?>
+                                        <li <?php if ($var['selected']) { ?> class="active" <?php } ?> >
+                                            <a <?php if (!$var['selected']) { ?> action="action-change-sucursal" _value="<?php echo $var['value']; ?>" <?php
+                                            } else {
+                                                echo 'href="javascript:void(0);"';
+                                            }
+                                            ?>>
+                                                                                     <?php echo $var['text'] ?>
+                                            </a>
 
-                <form id="navbar-perfiles" role="form" class="navbar-form navbar-left collapse">
-                    <div class="form-group">
-                        <select class="select select2-offscreen cmb-roles">
-                            <?php foreach ($combo_perfiles as $var) { ?>
-                                <option <?php if ($var['selected']) { ?> selected="selected" <?php } ?> value="<?php echo $var['value']; ?>"><?php echo $var['text']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </form>
-                <form id="navbar-sedes" role="search" class="navbar-form navbar-left collapse">
-                    <div class="form-group">
-                        <select class="select select2-offscreen cmb-sedes">
-                            <?php foreach ($combo_sedes as $var) { ?>
-                                <option <?php if ($var['selected']) { ?> selected="selected" <?php } ?> value="<?php echo $var['value']; ?>"><?php echo $var['text']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </form>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                    <?php
+                }
+                ?>
                 <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
                     <li class="dropdown">
                         <a href="<?php echo site_url('app/block'); ?>" >
@@ -120,7 +167,13 @@
                         </a>
                     <li class="user dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="resources/assets/app/images/demo/users/user.png" alt="">
+                            <img src="<?php
+                            if (file_exists('resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture)) {
+                                echo 'resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture;
+                            } else {
+                                echo 'resources/assets/app/images/demo/users/user.png';
+                            }
+                            ?>" alt="">
                             <span>
                                 <?php echo $eUser->username ?>
                             </span>
@@ -150,7 +203,14 @@
                         <!-- User dropdown -->
                         <div class="user-menu dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo $resources_path; ?>/images/demo/users/user.png" alt="">
+                                <img src="<?php
+                                if (file_exists('resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture)) {
+                                    echo 'resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture;
+                                } else {
+                                    echo 'resources/assets/app/images/demo/users/user.png';
+                                }
+                                ?>" alt="">
+                                <!--<img src="<?php echo $resources_path; ?>/images/demo/users/user.png" alt="">-->
                                 <div class="user-info">
                                     <?php echo $eUser->username ?> 
                                     <span><?php echo $eProfile->name ?></span></div>
@@ -158,30 +218,36 @@
                             <div class="popup dropdown-menu dropdown-menu-right">
                                 <div class="thumbnail">
                                     <div class="thumb">
-                                        <img src="<?php echo $resources_path; ?>/images/demo/users/user2.jpg" alt="">
-                                        <div class="thumb-options">
-                                            <span>
-                                                <a href="javascript:;" class="btn btn-icon btn-success">
-                                                    <i class="icon-pencil"></i>
-                                                </a>
-                                                <a href="javascript:;" class="btn btn-icon btn-success">
-                                                    <i class="icon-remove"></i>
-                                                </a>
-                                            </span>
-                                        </div>
+                                        <img src="<?php
+                                        if (file_exists('resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture)) {
+                                            echo 'resources/uploads/user/' . Helper_App_Session::getUserId() . '/' . $eUser->name_picture;
+                                        } else {
+                                            echo $resources_path . '/images/demo/users/user2.jpg';
+                                        }
+                                        ?>" alt="">
+                                        <!--                                        <div class="thumb-options">
+                                                                                    <span>
+                                                                                        <a href="javascript:;" class="btn btn-icon btn-success">
+                                                                                            <i class="icon-pencil"></i>
+                                                                                        </a>
+                                                                                        <a href="javascript:;" class="btn btn-icon btn-success">
+                                                                                            <i class="icon-remove"></i>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </div>-->
                                     </div>
                                     <div class="caption text-center">
                                         <h6><?php echo $ePerson->surname . ' ' . $ePerson->name ?> <small><?php echo $eProfile->name ?></small></h6>
                                     </div>
                                 </div>
-                                <ul class="list-group">
-                                    <li class="list-group-item"><i class="icon-pencil3 text-muted"></i> My posts <span class="label label-success">289</span></li>
-                                    <li class="list-group-item"><i class="icon-people text-muted"></i> Users online <span class="label label-danger">892</span></li>
-                                    <li class="list-group-item"><i class="icon-stats2 text-muted"></i> Reports <span class="label label-primary">92</span></li>
-                                    <li class="list-group-item"><i class="icon-stack text-muted"></i> Balance
-                                        <h5 class="pull-right text-danger">$45.389</h5>
-                                    </li>
-                                </ul>
+                                <!--                                <ul class="list-group">
+                                                                    <li class="list-group-item"><i class="icon-pencil3 text-muted"></i> My posts <span class="label label-success">289</span></li>
+                                                                    <li class="list-group-item"><i class="icon-people text-muted"></i> Users online <span class="label label-danger">892</span></li>
+                                                                    <li class="list-group-item"><i class="icon-stats2 text-muted"></i> Reports <span class="label label-primary">92</span></li>
+                                                                    <li class="list-group-item"><i class="icon-stack text-muted"></i> Balance
+                                                                        <h5 class="pull-right text-danger">$45.389</h5>
+                                                                    </li>
+                                                                </ul>-->
                             </div>
                         </div>
                         <!-- /user dropdown -->
@@ -190,7 +256,7 @@
                             <?php $isActiveMenu = ( $controller_current == 'dashboard' ); ?>
 
                             <li class="<?php if ($isActiveMenu) { ?>active<?php } ?>">
-                                <a href="<?php //echo current_url();            ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
+                                <a href="<?php //echo current_url();                                     ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
                                     <span>INICIO</span> 
                                     <i class="icon-screen2"></i>
                                 </a>
@@ -201,8 +267,8 @@
                                 </ul>
                             </li>
 
-                            <?php //=================================================================== ?>
-                            <?php //=================================================================== ?>
+                            <?php //===================================================================    ?>
+                            <?php //===================================================================   ?>
                             <?php
                             //print_r($arrMenu); 
                             if (!empty($arrMenu)) {
@@ -220,7 +286,7 @@
                                     ?>
 
                                     <li class="<?php if ($isActiveMenu) { ?>active<?php } ?>">
-                                        <a href="<?php //echo current_url();            ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
+                                        <a href="<?php //echo current_url();                                    ?>#" class="expand" <?php if ($isActiveMenu) { ?>id="second-level"<?php } ?>>
                                             <span><?php echo $menu->name; ?></span> 
                                             <i class="<?php echo is_null($menu->name_icon) ? 'icon-stack' : $menu->name_icon ?>"></i>
                                         </a>
@@ -263,7 +329,7 @@
                     <!-- Footer -->
                     <div class="footer clearfix">
                         <div class="pull-left">
-                            <span>&copy; 2015 - <?php echo date('Y') + 1; ?> . Developer by Luis Rodriguez, &numsp; </span>
+                            <span>&copy; 2016 - <?php echo date('Y') + 1; ?> . Developer by Luis Rodriguez, &numsp; </span>
                             <span>
                                 <?php echo ENVIRONMENT == 'development' ? 'Ambiente de Desarrollo' : 'Ambiente de Producción' ?>
                             </span>
@@ -272,12 +338,12 @@
                             <a href="https://twitter.com/TRodriguezN" target="_blank" title="Twitter" class="tip">
                                 <i class="icon-twitter"></i>
                             </a> 
-                            <a href="https://www.facebook.com/Luch1t0" target="_blank" title="Facebook" class="tip">
+                            <a href="https://www.facebook.com/crodriguezn.ec" target="_blank" title="Facebook" class="tip">
                                 <i class="icon-facebook"></i>
-                            </a> <a href="https://www.instagram.com/crodriguezn90/" target="_blank" title="Istragram" class="tip">
+                            </a> <a href="https://www.instagram.com/crodriguezn90/" target="_blank" title="Instragram" class="tip">
                                 <i class="icon-cog3"></i>
                             </a> 
-                            <a href="http://depwebrodriguez.honor.es/" target="_blank" title="Luis Rodriguez" class="tip">
+                            <a href="http://luis-rodriguez-ec.herokuapp.com/site/index" target="_blank" title="Luis Rodriguez" class="tip">
                                 <i class="icon-link"></i>
                             </a>
                             <a title="Aplicación" class="tip"> <?php echo '<i class="icon-screen"></i> ' . $eAppVersion->name ?></a>

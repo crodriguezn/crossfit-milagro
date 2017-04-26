@@ -11,7 +11,7 @@ class System_Db_Back_UpX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/system_db_backup/permission.php');
+        $this->load->file('application/modules/app/system/db_backup/permission.php');
         $this->permission = new System_BackUp_DB_Permission( $this->name_key );
     }
 

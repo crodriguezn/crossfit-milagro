@@ -1,3 +1,0 @@
-var BackUp_View = {
-
-};

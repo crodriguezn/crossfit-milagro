@@ -1,0 +1,41 @@
+========================2017-04-22 18:30:16========================
+
+UPDATE "person" SET "name" = 'Carlos Luis', "surname" = 'Rodriguez Nieto', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '0927576504', "birthday" = '1990-07-12', "gender" = 'GENDER_MALE', "address" = 'Milagro', "phone_cell" = '', "email" = 'taylorluis93@gmail.com', "estado_civil" = 'ESTADO_CIVIL_CASADO', "tipo_sangre" = 'TIPO_SANGRE_O+', "id_ciudad" = '47949', "modified" = '2017-04-22 18:04:30' WHERE "id" =  '2'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 18:30:16========================
+
+UPDATE "user" SET "id_person" = '2', "username" = 'crodriguez', "modified" = '2017-04-22 18:04:30' WHERE "id" =  '2'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 18:30:16========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id", "created", "modified") VALUES ('2', '4', '1', 8, '2017-04-22 18:04:30', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 18:30:16========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  8
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 18:30:16========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id", "created", "modified") VALUES (8, '1', 14, '2017-04-22 18:04:30', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+

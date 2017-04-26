@@ -1,0 +1,44 @@
+========================2016-04-23 15:00:09========================
+
+
+            SELECT 
+                "cb"."id" AS "cb_id","cb"."id_company" AS "cb_id_company","cb"."name" AS "cb_name","cb"."address" AS "cb_address","cb"."phone" AS "cb_phone","cb"."isActive" AS "cb_isActive","cb"."id_ciudad" AS "cb_id_ciudad"
+            FROM "company_branch" AS "cb"
+            WHERE 1=1
+                
+                AND "cb"."id_company"=1
+                AND (
+                    UPPER("cb"."name") LIKE UPPER('%%') OR
+                    UPPER("cb"."address") LIKE UPPER('%%') OR
+                    UPPER("cb"."phone") LIKE UPPER('%%')
+                )
+             ORDER BY "cb"."name" ASC 
+             LIMIT 10 OFFSET 0 
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-23 15:00:09========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "company_branch" AS "cb"
+            WHERE 1=1
+                
+                AND "cb"."id_company"=1
+                AND (
+                    UPPER("cb"."name") LIKE UPPER('%%') OR
+                    UPPER("cb"."address") LIKE UPPER('%%') OR
+                    UPPER("cb"."phone") LIKE UPPER('%%')
+                )
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

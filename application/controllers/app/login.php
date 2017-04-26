@@ -15,26 +15,37 @@ class Login extends MY_Controller
             $this->redirect('app/dashboard');
             return;
         }
+        
         $this->browser = Helper_Browser::isIExplorer();
+        
     }
 
-	public function index()
-	{
+    public function index()
+    {
             
-            $MY =& MY_Controller::get_instance();
-            
-            $login_title = 'INGRESO AL SISTEMA';
-            
-            /* @var $mAppVersion App_Version_Model */
-            $mAppVersion =& $MY->mAppVersion;
-            
-            /* @var $eAppVersion eAppVersion  */
-            $eAppVersion = $mAppVersion->loadArray( array( 'isActive' => 1, 'isProject' => 1 ) );
+        $MY =& MY_Controller::get_instance();
+
+        $login_title = 'INGRESO AL BOX CROSSFIT-MILAGRO';
+
+        /* @var $mAppVersion App_Version_Model */
+        $mAppVersion =& $MY->mAppVersion;
         
-            $params_view = array(
-            'login_title'        => $login_title,
-            'browser_message'    => $this->browser['isSuccess'] ? $this->browser['message'] : '',
-            'eAppVersion'        => $eAppVersion
+        /* @var $mConfigurationSystem Configuration_System_Model */
+        $mConfigurationSystem =& $MY->mConfigurationSystem;
+        
+        $id_system = Helper_Config::getSystemId();
+        
+        /* @var $eConfigurationSystem eConfigurationSystem */
+        $eConfigurationSystem = $mConfigurationSystem->load($id_system);
+
+        /* @var $eAppVersion eAppVersion  */
+        $eAppVersion = $mAppVersion->loadArray( array( 'isActive' => 1, 'isProject' => 1 ) );
+
+        $params_view = array(
+            'login_title'           => $login_title,
+            'browser_message'       => $this->browser['isSuccess'] ? $this->browser['message'] : '',
+            'eAppVersion'           => $eAppVersion,
+            'eConfigurationSystem'  => $eConfigurationSystem
         );
         
         Helper_App_View::view('app/html/pages/login/form', $params_view);

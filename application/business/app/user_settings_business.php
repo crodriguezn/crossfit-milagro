@@ -23,7 +23,7 @@ class Business_App_User_Settings
             $filter->text = $txt_filter;
             $filter->id_company_branch = ( Helper_App_Session::isSuperAdminProfile() || Helper_App_Session::isAdminProfile() )? NULL : Helper_App_Session::getCompanyBranchId();
         
-            $mUser->filter($filter, $eUsers/*REF*/, $ePersons/*REF*/, $count/*REF*/ );
+            $mUser->filter($filter, $eUsers/*REF*/, $ePersons/*REF*/, $eProfiles/*REF*/, $count/*REF*/ );
             
             $oBus->isSuccess(TRUE);
         }
@@ -36,6 +36,7 @@ class Business_App_User_Settings
         $oBus->data(array(
             'eUsers' => $eUsers,
             'ePersons' => $ePersons,
+            'eProfiles' => $eProfiles,
             'count' => $count
         ));
         
@@ -88,7 +89,7 @@ class Business_App_User_Settings
         {
             if(!Helper_App_Session::isAdminProfile() || !Helper_App_Session::isSuperAdminProfile())
             {
-                if(Business_App_Person::isValidDocument($ePerson->document))
+                if(!Business_App_Person::isValidDocument($ePerson->document))
                 {
                     throw new Exception('Documento Invalido, No permitido');
                 }
@@ -108,6 +109,7 @@ class Business_App_User_Settings
             }
             
             $mPerson->save($ePerson);
+            $eUser->id_person = $ePerson->id;
             $mUser->save($eUser);
             
             $eUserProfileT = $mUserProfile->loadArray(array('id_user'=>$eUser->id, 'id_profile'=>$eUserProfile->id_profile));

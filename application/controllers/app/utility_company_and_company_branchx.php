@@ -11,7 +11,7 @@ class Utility_Company_And_Company_BranchX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/utility_company_and_company_branch/permission.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/permission.php');
         $this->permission = new Utility_Company_And_Company_Branch_Permission( $this->name_key );
         $this->permission->access_branch        = Helper_App_Session::isPermissionForModule($this->name_key,'access_branch');
         $this->permission->access_company       = Helper_App_Session::isPermissionForModule($this->name_key,'access_company');
@@ -94,7 +94,7 @@ class Utility_Company_And_Company_BranchX extends MY_Controller
     
     private function loadCompany()
     {
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -160,7 +160,7 @@ class Utility_Company_And_Company_BranchX extends MY_Controller
     
     private function saveCompany()
     {
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_form.php');
         
         $resAjax = new Response_Ajax();
         $frmData = new Form_App_Company(TRUE);
@@ -250,7 +250,7 @@ class Utility_Company_And_Company_BranchX extends MY_Controller
     
     private function loadCompanyBranch()
     {
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_branch_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_branch_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -283,7 +283,7 @@ class Utility_Company_And_Company_BranchX extends MY_Controller
     
     private function saveCompanyBranch()
     {
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_branch_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_branch_form.php');
         
         $resAjax = new Response_Ajax();
         $frm_data = new Form_App_Company_Branch(TRUE);

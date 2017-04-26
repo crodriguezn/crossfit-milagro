@@ -20,9 +20,13 @@ date_default_timezone_set('America/Guayaquil');
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-    define('ENVIRONMENT', 'production');
+    define('ENVIRONMENT', 'development');
     define('TIME_LIMIT', 360000);
     ini_set('memory_limit', '2048M');
+    
+    /*Cambiamos las variables del PHP.INI para cuando cierre el navegador se destruya las sessiones*/
+    ini_set('session.use_only_cookies','1'); 
+    ini_set('session.use_trans_sid','0'); 
     
 /*
  *---------------------------------------------------------------

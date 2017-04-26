@@ -1,0 +1,8 @@
+========================2016-04-17 09:13:54========================
+
+INSERT INTO "module" ("id_parent", "name", "description", "name_key", "num_order", "isAdmin", "isActive", "name_icon", "id") VALUES ('14', 'Crossfiteros --Clientes--', 'Mantenimiento de Crossfiteros (Clientes)', 'setting_customer_crossfit', 0, 0, '1', NULL, 18)
+
+Desde la IP: ::1
+
+=======================================================================
+

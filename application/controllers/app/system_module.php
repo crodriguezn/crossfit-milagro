@@ -11,7 +11,7 @@ class System_Module extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_module/permission.php');
+        $this->load->file('application/modules/app/system/module/permission.php');
         $this->permission = new System_Module_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -42,12 +42,12 @@ class System_Module extends MY_Controller
 
     public function index()
     {
-        Helper_App_View::layout('app/html/pages/system_module/page');
+        Helper_App_View::layout('app/html/pages/system/module/page');
     }
     
     public function mvcjs()
     {
-        $this->load->file('application/modules/app/system_module/data/module_data.php');
+        $this->load->file('application/modules/app/system/module/data/module_data.php');
         $data_module = new Data_App_Module_Module();
         $data_permission = new Data_App_Module_Permission();
         
@@ -58,6 +58,6 @@ class System_Module extends MY_Controller
             'data_permission_default' => $data_permission->toArray(),
         );
         
-        Helper_App_JS::showMVC('system_module', $params);
+        Helper_App_JS::showMVC('system/module', $params);
     }
 }

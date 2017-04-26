@@ -1,4 +1,10 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
+/*
+ * @author Carlos Luis Rodriguez Nieto <taylorluis93@gmail.com>
+ * @date 15-oct-2016
+ * @time 23:15:58
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class User_Log_Model extends MY_Model
 {
@@ -37,6 +43,65 @@ class User_Log_Model extends MY_Model
         {
             throw new Exception($e->getMessage());
         }
+    }
+    
+    function lastActivity( filterUserLog $filter, &$eUserLogs, &$eUsers, &$ePersons )
+    {
+        $eUserLogs  = array();
+        $eUsers     = array();
+        $ePersons   = array();
+        
+        $select_user_log = $this->buildSelectFields('ul_', 'ul', $this->table);
+        $select_user = $this->buildSelectFields('u_', 'u', 'user');
+        $select_person = $this->buildSelectFields('p_', 'p', 'person');
+        
+        $select = $select_user.','.$select_user_log.','.$select_person;
+        
+        $sql = "
+            SELECT
+                ".( $select )."
+            FROM \"".( $this->table )."\" AS \"ul\"
+                INNER JOIN \"user\" AS \"u\" ON \"u\".\"id\" = \"ul\".id_user
+                INNER JOIN \"person\" AS \"p\" ON \"p\".\"id\" = \"u\".id_person
+            WHERE
+                1=1
+                ".($filter->isAdmin ? "":" AND \"ul\".\"id\"=".($filter->id_user)." ")."
+            ORDER BY
+                \"ul\".\"id\" DESC
+            ".( is_null($filter->limit) ? '':'LIMIT '.$filter->limit )."
+        ";
+        
+        $queryR = $this->db->query($sql);
+        if( $queryR === FALSE )
+        {
+            Helper_Log::write( $this->messageError(__FUNCTION__,FALSE), Helper_Log::LOG_DB);
+            throw new Exception("Problema ejecución en Base de Datos, ver log de errores. Consulte con Sistemas");
+        }
+        
+        $rows = $queryR->result_array();
+        
+        if( !empty($rows) )
+        {
+            foreach( $rows as $row )
+            {
+                $eUserLog = new eUserLog();
+                $eUserLog->parseRow($row, 'ul_');
+
+                $eUserLogs[] = $eUserLog;
+                
+                $eUser = new eUser();
+                $eUser->parseRow($row, 'u_');
+
+                $eUsers[] = $eUser;
+                
+                $ePerson = new ePerson();
+                $ePerson->parseRow($row, 'p_');
+
+                $ePersons[] = $ePerson;
+                
+            }
+        }
+        
     }
     
     function filter( filterUserLog $filter, &$eUserLogs, &$eUsers, &$count )
@@ -143,6 +208,9 @@ class filterUserLog extends MY_Entity_Filter
     public $action;
     public $date_begin;
     public $date_end;
+    public $limit;
+    public $isAdmin;
+    public $id_user;
     
     public function __construct()
     {
@@ -151,6 +219,9 @@ class filterUserLog extends MY_Entity_Filter
         $this->action       = array();
         $this->date_begin   = NULL;
         $this->date_end     = NULL;
+        $this->limit        = NULL;
+        $this->isAdmin      = FALSE;
+        $this->id_user      = NULL;
     }
     
     

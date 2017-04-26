@@ -3,13 +3,10 @@
 class Icon_Class extends MY_Controller
 {
     
-    public $browser_message;
-    
     function __construct()
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->browser_message = Helper_App_Browser::obtener_browser();
         if( !Helper_App_Session::isLogin() )
         {
             $this->redirect('app/dashboard');

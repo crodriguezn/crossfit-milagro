@@ -11,7 +11,7 @@ class Security_Binnacle extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/security_binnacle/permission.php');
+        $this->load->file('application/modules/app/security/binnacle/permission.php');
         $this->permission = new Security_Binnacle_Permission( $this->name_key );
         
         $this->permission->view = Helper_App_Session::isPermissionForModule($this->name_key,'view');
@@ -52,14 +52,14 @@ class Security_Binnacle extends MY_Controller
                     array('id' => Helper_App_Log::LOG_DELETE,   'name' => 'DELETE')
                 );
         $combo_action = Helper_Array::toIdText($array_array, 'id', 'name');
-        Helper_App_View::layout('app/html/pages/security_binnacle/page', array(
+        Helper_App_View::layout('app/html/pages/security/binnacle/page', array(
             'combo_action' => $combo_action
         ));
     }
     
     public function mvcjs()
     {
-        $this->load->file('application/modules/app/security_binnacle/form/binnacle_form.php');
+        $this->load->file('application/modules/app/security/binnacle/form/binnacle_form.php');
         $frm = new Form_App_Security_Binnacle();
         
         $params = array(
@@ -69,6 +69,6 @@ class Security_Binnacle extends MY_Controller
             'binnacle_form_default' => $frm->toArray()
         );
         
-        Helper_App_JS::showMVC('security_binnacle', $params);
+        Helper_App_JS::showMVC('security/binnacle', $params);
     }
 }

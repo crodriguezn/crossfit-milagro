@@ -1,0 +1,8 @@
+========================2016-04-17 11:36:06========================
+
+INSERT INTO "profile" ("name", "description", "isAdmin", "isSuperAdmin", "isActive", "isEditable", "id_rol", "id") VALUES ('Invitado', 'Invitado bajo restri', 0, 0, '1', 1, '4', 4)
+
+Desde la IP: ::1
+
+=======================================================================
+

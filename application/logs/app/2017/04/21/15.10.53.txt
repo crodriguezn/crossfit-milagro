@@ -1,0 +1,32 @@
+========================2017-04-21 15:10:53========================
+
+UPDATE "module" SET "id_parent" = '14', "name" = 'Horario Clases', "description" = 'Submodulo de Horario de clases', "name_key" = 'setting_class_hour', "isAdmin" = '0', "isActive" = '1', "name_icon" = NULL WHERE "id" =  '21'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 15:10:53========================
+
+UPDATE "permission" SET "name" = 'Acceso', "description" = 'Acceso al submodulo modulo de horarios de clases', "name_key" = 'access', "id_module" = '21' WHERE "id" =  '46'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 15:10:53========================
+
+UPDATE "permission" SET "name" = 'Crear/Nuevo', "description" = 'Crear un nuevo horario de clase', "name_key" = 'create', "id_module" = '21' WHERE "id" =  '47'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 15:10:53========================
+
+UPDATE "permission" SET "name" = 'Editar/Actualizar', "description" = 'Editar/Actualizar horaio de clase', "name_key" = 'update', "id_module" = '21' WHERE "id" =  '48'
+
+Desde la IP: ::1
+
+=======================================================================
+

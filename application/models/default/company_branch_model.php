@@ -153,8 +153,9 @@ class Company_Branch_Model extends MY_Model
                     UPPER(\"cb\".\"phone\") LIKE UPPER('%" . ( $this->db->escape_like_str($filter->text) ) . "%')
                 )
             " . ( $useCounter ? '' : " ORDER BY \"cb\".\"name\" ASC " ) . "
-            " . ( is_null($filter->limit) || is_null($filter->offset) ? '' : " LIMIT ".( $filter->limit )." OFFSET ".( $filter->offset )." " ) . "
+            " . ( $useCounter || is_null($filter->limit) || is_null($filter->offset) ? '' : " LIMIT ".( $filter->limit )." OFFSET ".( $filter->offset )." " ) . "
         ";
+        //Helper_Log::write($sql);
 
         return $sql;
     }
@@ -169,6 +170,8 @@ class eCompanyBranch extends MY_Entity
     public $phone;
     public $isActive;
     public $id_ciudad;
+    public $monthly_price;
+    public $daily_price;
 
     public function __construct($useDefault = TRUE)
     {
@@ -176,12 +179,14 @@ class eCompanyBranch extends MY_Entity
         
         if( $useDefault )
         {
-            $this->id_company = NULL;
-            $this->name = '';
-            $this->address = '';
-            $this->phone = '';
-            $this->isActive = 1;
-            $this->id_ciudad = NULL;
+            $this->id_company       = NULL;
+            $this->name             = '';
+            $this->address          = '';
+            $this->phone            = '';
+            $this->isActive         = 1;
+            $this->id_ciudad        = NULL;
+            $this->monthly_price    = 0;
+            $this->daily_price      = 0;
         }
     }
 }

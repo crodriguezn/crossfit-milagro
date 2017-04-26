@@ -11,7 +11,7 @@ class System_Setting_Param extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_setting_param/permission.php');
+        $this->load->file('application/modules/app/system/setting_param/permission.php');
         $this->permission = new System_Setting_Param_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -44,12 +44,12 @@ class System_Setting_Param extends MY_Controller
     {
         $arrTimePar = Helper_Fecha::getArrayTime();
         //Helper_Log::write($arrTimePar);
-        Helper_App_View::layout('app/html/pages/system_setting_param/page',array('arrTime'=>$arrTimePar));
+        Helper_App_View::layout('app/html/pages/system/setting_param/page',array('arrTime'=>$arrTimePar));
     }
     
     public function mvcjs()
     {
-        $this->load->file('application/modules/app/system_setting_param/form/setting_param_form.php');
+        $this->load->file('application/modules/app/system/setting_param/form/setting_param_form.php');
         
         $data = new Form_App_System_Setting_Param();
         
@@ -60,6 +60,6 @@ class System_Setting_Param extends MY_Controller
             'data_setting_param_default' => $data->toArray()
         );
         
-        Helper_App_JS::showMVC('system_setting_param', $params);
+        Helper_App_JS::showMVC('system/setting_param', $params);
     }
 }

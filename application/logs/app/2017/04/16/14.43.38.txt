@@ -1,0 +1,49 @@
+========================2017-04-16 14:43:38========================
+
+INSERT INTO "person" ("name", "surname", "tipo_documento", "document", "birthday", "gender", "address", "phone_cell", "email", "estado_civil", "tipo_sangre", "id_ciudad", "id") VALUES ('Isabel Maria', 'Nieto Guerra', 'TIPO_IDENT_CEDULA', '1202266753', '1952-10-09', 'GENDER_MALE', 'Cdla 22 de noviembre', '', 'isamaria77@hotmail.com', 'ESTADO_CIVIL_DIVORCIADO', 'TIPO_SANGRE_B+', '47949', 4)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:38========================
+
+INSERT INTO "user" ("id_person", "username", "password", "id") VALUES (4, '1202266753', 'daefb4e96d8395d2ace3c36ccd2f8094', 4)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:38========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id") VALUES (4, '2', '1', 5)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:38========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  5
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:38========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id") VALUES (5, '1', 9)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:38========================
+
+INSERT INTO "customer" ("id_person", "code", "registration_date", "id") VALUES (4, 'WOD00003', '2017-04-16 14:43:38', 3)
+
+Desde la IP: ::1
+
+=======================================================================
+

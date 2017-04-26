@@ -1,6 +1,6 @@
 {
     "name": "crodriguezn/crossfit-milagro",
-    "type": "system",
+    "type": "project",
     "description": "Sistema de Control de WOD",
     "keywords": ["crossfit-milagro", "crossfit", "milagro", "ecuador"],
     "homepage": "https://github.com/crodriguezn/crossfit-milagro.git",
@@ -8,7 +8,9 @@
     "authors": [
         {
             "name": "Luis Rodriguez",
-            "email": "taylorluis93@gmail.com"
+            "email": "taylorluis93@gmail.com",
+            "role": "developer",
+            "homepage": "https://github.com/crodriguezn/luis-rodriguez-ec.git"
         }
     ],
     "require": {
@@ -16,5 +18,8 @@
         "raveren/kint": "0.9",
         "tinymce/tinymce": "dev-master",
         "ext-gd": "*"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
     }
 }

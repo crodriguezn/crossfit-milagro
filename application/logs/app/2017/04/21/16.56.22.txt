@@ -1,0 +1,41 @@
+========================2017-04-21 16:56:22========================
+
+UPDATE "person" SET "name" = 'Diego', "surname" = 'Alvarado', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '1202266754', "birthday" = '1993-10-09', "gender" = 'GENDER_MALE', "address" = 'Cdla 22 de noviembre', "phone_cell" = '', "email" = 'isamaria77@hotmail.com', "estado_civil" = 'ESTADO_CIVIL_SOLTERO', "tipo_sangre" = 'TIPO_SANGRE_B+', "id_ciudad" = '47949' WHERE "id" =  '5'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 16:56:22========================
+
+INSERT INTO "user" ("id_person", "username", "password", "id") VALUES ('5', 'dalvarado', 'e10adc3949ba59abbe56e057f20f883e', 5)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 16:56:22========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id") VALUES (5, '5', '1', 6)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 16:56:22========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  6
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-21 16:56:22========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id") VALUES (6, '1', 10)
+
+Desde la IP: ::1
+
+=======================================================================
+

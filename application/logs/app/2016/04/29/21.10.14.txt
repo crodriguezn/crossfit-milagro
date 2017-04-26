@@ -1,0 +1,24 @@
+========================2016-04-29 21:10:14========================
+
+INSERT INTO "module" ("id_parent", "name", "description", "name_key", "num_order", "isAdmin", "isActive", "name_icon", "id") VALUES ('14', 'Horarios de Clases', 'Mantenimiento de Horarios de Clases', 'setting_schedule', 0, 0, '1', NULL, 19)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-29 21:10:14========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id") VALUES ('Nuevo', 'Crear un nuevo horario de clase', 'create', 19, 42)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-29 21:10:14========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id") VALUES ('Editar/Actualizar', 'Editar/Actualizar un horario de clase', 'update', 19, 43)
+
+Desde la IP: ::1
+
+=======================================================================
+

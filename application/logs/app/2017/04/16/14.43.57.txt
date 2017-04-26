@@ -1,0 +1,49 @@
+========================2017-04-16 14:43:57========================
+
+UPDATE "person" SET "name" = 'Isabel Maria', "surname" = 'Nieto Guerra', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '1202266753', "birthday" = '1952-10-09', "gender" = 'GENDER_FEMALE', "address" = 'Cdla 22 de noviembre', "phone_cell" = '', "email" = 'isamaria77@hotmail.com', "estado_civil" = 'ESTADO_CIVIL_DIVORCIADO', "tipo_sangre" = 'TIPO_SANGRE_B+', "id_ciudad" = '47949' WHERE "id" =  '4'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:57========================
+
+UPDATE "user" SET "id_person" = '4', "username" = '1202266753' WHERE "id" =  '4'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:57========================
+
+UPDATE "user_profile" SET "id_user" = '4', "id_profile" = '2', "isActive" = '1' WHERE "id" =  '5'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:57========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  '5'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:57========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id") VALUES ('5', '1', 9)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:43:57========================
+
+UPDATE "customer" SET "id_person" = '4', "code" = 'WOD00003', "registration_date" = '2017-04-16 14:43:38', "id" = '3' WHERE "id" =  '3'
+
+Desde la IP: ::1
+
+=======================================================================
+

@@ -48,6 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+/*
 $db['default']['hostname'] = 'ec2-54-225-197-143.compute-1.amazonaws.com';
 $db['default']['username'] = 'kmtbhqognorbgl';
 $db['default']['password'] = 'DNCt4ejfUfiYcn6bWSq6DVuNny';
@@ -65,12 +66,11 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 $db['default']['bin_dump'] = "/usr/bin/pg_dump";
-
-/*
+*/
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'postgres';
 $db['default']['password'] = 'postgres0';
-$db['default']['database'] = 'crossfit_v1';
+$db['default']['database'] = 'crossfit_milagro_demo';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['port']     = 5432;
 $db['default']['dbprefix'] = '';
@@ -84,7 +84,6 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 $db['default']['bin_dump'] = "C:\Bitnami\wappstack-5.4.37-0\postgresql\bin\pg_dump.exe";
-*/
 
 /*
 $db['digifort']['hostname'] = "localhost";

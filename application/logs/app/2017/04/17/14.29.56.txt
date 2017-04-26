@@ -1,0 +1,224 @@
+========================2017-04-17 14:29:56========================
+
+Array
+(
+    [app_crossfit] => Array
+        (
+            [__id_session] => q4nl9lib822oqm2a3u3b7q57937A1lTldCU7Nfga7DrCbjq7g1UJ1coT3i
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 1
+            [__id_user] => 1
+            [__user_profile_picture] => 
+            [__id_person] => 1
+            [__isSuperAdmin] => 1
+            [__isAdmin] => 1
+            [__id_profile] => 1
+            [__last_time] => 2017-04-17 14:29:54
+            [__ip] => 192.168.1.100
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => stdClass Object
+                (
+                    [browser_name_regex] => §^mozilla/5\.0 \(.*linux.*android.*\) applewebkit/.* \(khtml, like gecko\) chrome/.*safari/.*$§
+                    [browser_name_pattern] => Mozilla/5.0 (*Linux*Android*) AppleWebKit/* (KHTML, like Gecko) Chrome/*Safari/*
+                    [parent] => Chrome Generic for Android
+                    [win32] => 
+                    [comment] => Chrome 0.0
+                    [browser] => Chrome
+                    [browser_type] => Browser
+                    [browser_bits] => 32
+                    [browser_maker] => Google Inc
+                    [platform] => Android
+                    [platform_description] => Android OS
+                    [platform_bits] => 32
+                    [platform_maker] => Google Inc
+                    [frames] => 1
+                    [iframes] => 1
+                    [tables] => 1
+                    [cookies] => 1
+                    [javascript] => 1
+                    [javaapplets] => 1
+                    [ismobiledevice] => 1
+                    [cssversion] => 3
+                    [device_name] => general Mobile Phone
+                    [device_type] => Mobile Phone
+                    [device_pointing_method] => touchscreen
+                    [device_code_name] => general Mobile Phone
+                    [renderingengine_name] => WebKit
+                    [renderingengine_description] => For Google Chrome, iOS (including both mobile Safari, WebViews within third-party apps, and web clips), Safari, Arora, Midori, OmniWeb, Shiira, iCab since version 4, Web, SRWare Iron, Rekonq, and in Maxthon 3.
+                    [renderingengine_maker] => Apple Inc
+                    [browser_modus] => unknown
+                    [version] => 0.0
+                    [majorver] => 0
+                    [minorver] => 0
+                    [platform_version] => unknown
+                    [alpha] => 
+                    [beta] => 
+                    [win16] => 
+                    [win64] => 
+                    [backgroundsounds] => 
+                    [vbscript] => 
+                    [activexcontrols] => 
+                    [istablet] => 
+                    [issyndicationreader] => 
+                    [crawler] => 
+                    [aolversion] => 0
+                    [device_maker] => unknown
+                    [device_brand_name] => unknown
+                    [renderingengine_version] => unknown
+                )
+
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                )
+
+            [__permissions] => Array
+                (
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_module] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [management_class_scheduling] => Array
+                        (
+                            [0] => update
+                            [1] => create
+                            [2] => access
+                        )
+
+                    [utility_company_and_company_branch] => Array
+                        (
+                            [0] => access
+                            [1] => update_company
+                            [2] => access_company
+                            [3] => access_branch
+                            [4] => update_branch
+                            [5] => create_branch
+                            [6] => update_logo_company
+                        )
+
+                    [security_rol] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [setting_customer_crossfit] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [system] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting_class_schedule] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [management] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_profile] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                            [3] => view_permissions
+                            [4] => update_permissions
+                        )
+
+                    [user_settings] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [utility] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                            [0] => access
+                            [1] => view
+                        )
+
+                    [system_log] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [security] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: 192.168.1.100
+
+=======================================================================
+

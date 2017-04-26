@@ -1,0 +1,8 @@
+========================2017-04-16 14:03:48========================
+
+UPDATE "configuration_system" SET "name_system" = 'Control del BOX', "name_key_system" = 'SysControl of BOX', "logo" = 'resources/uploads/system/logo/1/logo.png', "session_time_limit_min" = '600', "session_time_limit_max" = '1200', "isSaveBinnacle" = 0, "id" = 1 WHERE "id" =  1
+
+Desde la IP: ::1
+
+=======================================================================
+

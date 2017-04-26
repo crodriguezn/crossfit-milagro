@@ -1,0 +1,146 @@
+========================2016-04-06 14:46:27========================
+
+Array
+(
+    [app] => Array
+        (
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 1
+            [__id_user] => 1
+            [__id_person] => 1
+            [__isSuperAdmin] => 1
+            [__isAdmin] => 1
+            [__id_profile] => 1
+            [__last_time] => 2016-04-06 14:46:27
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => 
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                )
+
+            [__permissions] => Array
+                (
+                    [utility_company_and_company_branch] => Array
+                        (
+                            [0] => access
+                            [1] => update_company
+                            [2] => access_company
+                            [3] => access_branch
+                            [4] => update_branch
+                            [5] => create_branch
+                            [6] => update_logo_company
+                        )
+
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_rol] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [system_module] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_profile] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                            [3] => view_permissions
+                            [4] => update_permissions
+                        )
+
+                    [user_settings] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [utility] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_log] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                            [0] => access
+                            [1] => view
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+

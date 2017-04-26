@@ -274,4 +274,48 @@ class Helper_Fecha
             return $oDate;
         }
     }
+    
+    static public function isValidHour($hour)
+    {
+        /* $hour = "H:i"; //00:00 */
+        if ( preg_match('/^[0-9]{2,2}([:]?[0-9]{2,2})?$/', $hour)) 
+        {
+            
+            $arrHour = explode(':', $hour);
+            
+            if( ($arrHour[0] < 24) && ($arrHour[1] < 60))
+            {
+                return true;
+            }
+            
+            return false;
+            
+        }
+        
+        return false;
+        
+    }
+    
+    static public function getDateTime_By_Milliseconds($mil, $format = 'Y-m-d H:i:s')
+    {
+        $seconds = $mil / 1000;
+        
+        return date((empty($format)) ? "Y/m/d H:i:s" : $format , $seconds);
+            
+    }
+    
+    
+    static public function getDateTime_Restar_By_Dia($date, $restDay='-1 day', $format = 'Y-m-d H:i:s')
+    {
+        $nuevafecha = strtotime ( $restDay , strtotime ( $date ) ) ;
+        return date ( $format , $nuevafecha );
+    }
+    
+    
+    static public function getDateTime_Sumar_By_Dia($date, $sumDay='+1 day', $format = 'Y-m-d H:i:s')
+    {
+        $nuevafecha = strtotime ( $sumDay , strtotime ( $date ) ) ;
+        return date ( $format , $nuevafecha );
+    }
+    
 }

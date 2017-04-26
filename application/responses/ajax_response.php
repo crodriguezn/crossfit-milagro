@@ -39,8 +39,8 @@ class Response_Ajax extends MY_Response
     public function datatable( $arrData, $total_records )
     {
         $this->aaData = $arrData;
-        $this->iTotalRecords = $total_records;
-        $this->iTotalDisplayRecords = $total_records;
+        $this->iTotalRecords = empty($total_records)? 0 : $total_records;
+        $this->iTotalDisplayRecords = empty($total_records)? 0 : $total_records;
     }
     
     public function toJsonEncode()

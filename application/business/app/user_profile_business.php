@@ -23,9 +23,10 @@ class Business_App_User_Profile
             
             if(!Helper_App_Session::isAdminProfile() || !Helper_App_Session::isSuperAdminProfile())
             {
-                if(Business_App_Person::isValidDocument($ePerson->document))
+                
+                if(!Business_App_Person::isValidDocument($ePerson->document))
                 {
-                    throw new Exception('Documento Invalido: ' + $ePerson->document);
+                    throw new Exception('Documento Invalido: '.$ePerson->document);
                 }
 
                 if($ePersonT->tipo_documento != $ePerson->tipo_documento)
@@ -42,7 +43,7 @@ class Business_App_User_Profile
             $ePersonDocument = $mPerson->loadByDocument($ePerson->document, $ePerson->id);
             if(!$ePersonDocument->isEmpty())
             {
-                throw new Exception('Documento Existente: ' + $ePerson->document);
+                throw new Exception('Documento Existente: '. $ePerson->document);
             }
             $mPerson->save($ePerson);
             
@@ -54,6 +55,7 @@ class Business_App_User_Profile
         }
         catch( Exception $e )
         {
+            //print_r($e);
             $oTransaction->rollback();
             $oBus->isSuccess(FALSE);
             $oBus->message($e->getMessage());
@@ -69,6 +71,8 @@ class Business_App_User_Profile
         
         /* @var $upload CI_Upload */
         $upload =& $MY->upload;
+        /* @var $mUser User_Model */
+        $mUser =& $MY->mUser;
         
         try
         {
@@ -88,7 +92,8 @@ class Business_App_User_Profile
 
             $upload->initialize(array(
                 'upload_path'   => $path,
-                'allowed_types' => 'png',
+                'allowed_types' => 'gif|jpg|jpeg|png',
+                //'allowed_types' => 'png',
                 'max_width'     => '1080',
                 'max_height'    => '1080',
                 'max_size'      => '50000',
@@ -107,9 +112,18 @@ class Business_App_User_Profile
                 throw new Exception( strip_tags( $upload->display_errors() ) );
             }
             
+            $data = $upload->data();  
+            
+            $eUser = new eUser(FALSE);
+            $eUser->id = $id_user;
+            $eUser->name_picture = $data['file_name'];
+            
+            $mUser->save($eUser);
+            
             $oBus->isSuccess(TRUE);
-            $data = $upload->data();
+            
             $oBus->data(array('data' => $data));
+            
         }
         catch( Exception $e )
         {
@@ -124,6 +138,11 @@ class Business_App_User_Profile
     {
         $oBus = new Response_Business();
         
+        $MY = & MY_Controller::get_instance();
+       
+        /* @var $mUser User_Model */
+        $mUser =& $MY->mUser;
+        
         $uri = '';
         try
         {
@@ -132,7 +151,12 @@ class Business_App_User_Profile
                 throw new Exception('Picture por defecto');
             }
             
-            $uri = "resources/uploads/user/$id_user/profile.png";
+            $eUser = $mUser->load($id_user);
+            if(empty($eUser->name_picture))
+            {
+                throw new Exception('Picture por defecto');
+            }
+            $uri = "resources/uploads/user/$id_user/$eUser->name_picture";
             if( !file_exists( BASEPATH . '../' .$uri ) )
             {
                 throw new Exception('Picture por defecto');
@@ -157,6 +181,11 @@ class Business_App_User_Profile
     {
         $oBus = new Response_Business();
         
+        $MY = & MY_Controller::get_instance();
+       
+        /* @var $mUser User_Model */
+        $mUser =& $MY->mUser;
+        
         $uri = "resources/img/nologo.png";
         try
         {
@@ -165,7 +194,12 @@ class Business_App_User_Profile
                 throw new Exception('Ninguna Imagen a eliminar');
             }
             
-            $path = BASEPATH . '../' ."resources/uploads/user/$id_user/profile.png";
+            $eUser = $mUser->load($id_user);
+            if(empty($eUser->name_picture))
+            {
+                throw new Exception('Ninguna Imagen a eliminar');
+            }
+            $path = BASEPATH . '../' ."resources/uploads/user/$id_user/$eUser->name_picture";
             if( !file_exists($path) )
             {
                 throw new Exception('Ninguna Imagen a eliminar');
@@ -175,6 +209,9 @@ class Business_App_User_Profile
             {
                 throw new Exception('Ocurrio un error al tratar de eliminar la Imagen');
             }
+            
+            $eUser->name_picture = '';
+            $mUser->save($eUser);
             
             $oBus->isSuccess( TRUE );
         }
@@ -204,6 +241,38 @@ class Business_App_User_Profile
         {
             
             $eUserProfile = $mUserProfile->load($id_user, 'id_user');
+            
+            $oBus->isSuccess(TRUE);
+        }
+        catch( Exception $e )
+        {
+            $oBus->isSuccess(FALSE);
+            $oBus->message( $e->getMessage() );
+        }
+        
+        $oBus->data(array(
+            'eUserProfile' => $eUserProfile
+        ));
+        
+        return $oBus;
+    }
+    
+    
+    static public function loadUserProfileByIDUser_IDProfile( $id_user, $id_profile )
+    {
+        $oBus = new Response_Business();
+        
+        $MY =& MY_Controller::get_instance();
+
+        /* @var $mUserProfile User_Profile_Model */
+        $mUserProfile =& $MY->mUserProfile;
+        
+        $eUserProfile = new eUserProfile();
+        
+        try
+        {
+            
+            $eUserProfile = $mUserProfile->loadArray(array('id_user' => $id_user, 'id_profile' => $id_profile));
             
             $oBus->isSuccess(TRUE);
         }

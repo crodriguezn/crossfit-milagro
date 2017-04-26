@@ -1,0 +1,48 @@
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('9', '1', '2', '1', 51, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('10', '1', '2', '1', 52, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('11', '1', '2', '1', 53, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('12', '1', '2', '1', 54, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('13', '1', '2', '1', 55, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:00:04========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('14', '1', '1', '1', 56, '2017-04-25 23:04:00', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+

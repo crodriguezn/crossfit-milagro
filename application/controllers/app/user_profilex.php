@@ -11,7 +11,7 @@ class User_ProfileX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/user_profile/permission.php');
+        $this->load->file('application/modules/app/user/profile/permission.php');
         $this->permission = new User_Profile_Permission( $this->name_key );
         $this->permission->update = Helper_App_Session::isPermissionForModule($this->name_key,'update');
         
@@ -93,7 +93,7 @@ class User_ProfileX extends MY_Controller
     
     private function loadProfile()
     {
-        $this->load->file('application/modules/app/user_profile/form/profile_form.php');
+        $this->load->file('application/modules/app/user/profile/form/profile_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -257,7 +257,7 @@ class User_ProfileX extends MY_Controller
     
     private function saveProfile()
     {
-        $this->load->file('application/modules/app/user_profile/form/profile_form.php');
+        $this->load->file('application/modules/app/user/profile/form/profile_form.php');
         
         $resAjax = new Response_Ajax();
         $frm_data = new Form_App_Profile(TRUE);
@@ -277,7 +277,7 @@ class User_ProfileX extends MY_Controller
             
             $ePerson = $frm_data->getPersonEntity();
             $ePerson->id = Helper_App_Session::getPersonId();
-
+            
             $oBus = Business_App_User_Profile::savePerson($ePerson);
             
             if( !$oBus->isSuccess() )
@@ -347,7 +347,7 @@ class User_ProfileX extends MY_Controller
     
     private function saveUser()
     {
-        $this->load->file('application/modules/app/user_profile/form/user_form.php');
+        $this->load->file('application/modules/app/user/profile/form/user_form.php');
         
         $resAjax = new Response_Ajax();
         $frm_data = new Form_App_User(TRUE);

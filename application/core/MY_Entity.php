@@ -3,6 +3,8 @@
 class MY_Entity
 {
     public $id;
+    public $created;
+    public $modified;
     
     public function __construct( $useDefault = TRUE )
     {
@@ -13,10 +15,13 @@ class MY_Entity
             {
                 $this->$attr = FALSE;
             }
-            
+            $this->created  = date('Y-m-d H:m:i');
+            $this->modified = date('Y-m-d H:m:i');
             return;
         }
         
+        $this->created  = date('Y-m-d H:m:i');
+        $this->modified = date('Y-m-d H:m:i');
         $this->id = NULL;
     }
     

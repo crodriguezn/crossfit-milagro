@@ -4,6 +4,7 @@ class Business_App_Person
 {
     static public function isValidDocument( $document, $useFake=TRUE )
     {
+        
         $arr = array('0000000000','0999999999');
         
         if( $useFake )

@@ -11,7 +11,7 @@ class Security_RolX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/security_rol/permission.php');
+        $this->load->file('application/modules/app/security/rol/permission.php');
         $this->permission = new Security_Rol_Permission( $this->name_key );
         $this->permission->create = Helper_App_Session::isPermissionForModule($this->name_key,'create');
         $this->permission->update = Helper_App_Session::isPermissionForModule($this->name_key,'update');
@@ -108,7 +108,7 @@ class Security_RolX extends MY_Controller
     
     private function loadRol()
     {
-        $this->load->file('application/modules/app/security_rol/form/rol_form.php');
+        $this->load->file('application/modules/app/security/rol/form/rol_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -127,6 +127,8 @@ class Security_RolX extends MY_Controller
         
         $frm_data = new Form_App_Security_Rol();
         
+        $frm_data->setIdForm(1);
+        
         $frm_data->setRolEntity($eRol);
         $frm_data->setRolModuleEntities($eRolesModules);
         
@@ -139,20 +141,22 @@ class Security_RolX extends MY_Controller
     
     private function saveRol()
     {
-        $this->load->file('application/modules/app/security_rol/form/rol_form.php');
+        $this->load->file('application/modules/app/security/rol/form/rol_form.php');
         
         $resAjax = new Response_Ajax();
         
         $frmRol = new Form_App_Security_Rol(TRUE);
         
+        $id_form = Helper_Encrypt::decode($frmRol->id_form);
+
         try
         {
-            if( empty($frmRol->id_rol) && !$this->permission->create )
+            if( empty($id_form) && !$this->permission->create )
             {
                 throw new Exception('No tiene permisos para guardar');
             }
 
-            if( !empty($frmRol->id_rol) && !$this->permission->update )
+            if( !empty($id_form) && !$this->permission->update )
             {
                 throw new Exception('No tiene permisos para editar');
             }

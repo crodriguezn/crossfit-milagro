@@ -1,0 +1,41 @@
+========================2016-04-09 14:37:51========================
+
+UPDATE "person" SET "name" = 'Carlos Luis', "surname" = 'Rodriguez Nieto', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '0927576504', "birthday" = '1990-07-12', "gender" = 'GENDER_MALE', "address" = 'Milagro', "phone_cell" = '', "email" = 'taylorluis93@gmail.com', "estado_civil" = 'ESTADO_CIVIL_CASADO', "tipo_sangre" = 'TIPO_SANGRE_O+', "id_ciudad" = '47949' WHERE "id" =  '2'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-09 14:37:51========================
+
+INSERT INTO "user" ("id_person", "username", "password", "id") VALUES ('2', 'crodriguez', 'e10adc3949ba59abbe56e057f20f883e', 2)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-09 14:37:51========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id") VALUES (2, '3', '1', 2)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-09 14:37:51========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  2
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-09 14:37:51========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id") VALUES (2, '1', 2)
+
+Desde la IP: ::1
+
+=======================================================================
+

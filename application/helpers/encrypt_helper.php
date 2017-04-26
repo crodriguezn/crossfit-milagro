@@ -22,9 +22,7 @@ class Helper_Encrypt
     
     static public function encrypt( $value, $encryption_key='' )
     {
-        $MY =& MY_Controller::get_instance();
-        $MY->load->library('library_zend2');
-        
+
         $filter = new \Zend\Filter\Encrypt();
         $filter->setKey( empty($encryption_key) ? self::$Encryption_Key : $encryption_key );
         
@@ -33,8 +31,6 @@ class Helper_Encrypt
     
     static public function decrypt( $value_encoded, $encryption_key='' )
     {
-        $MY =& MY_Controller::get_instance();
-        $MY->load->library('library_zend2');
         
         $filter = new \Zend\Filter\Decrypt();
         $filter->setKey( empty($encryption_key) ? self::$Encryption_Key : $encryption_key );
@@ -96,31 +92,12 @@ class Helper_Encrypt
     
     static public function encryptId($value, $encryption_key)
     {
-        /*$iv_size = mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
-        $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-        $encrypted_string = mcrypt_encrypt(MCRYPT_BLOWFISH, $encryption_key, utf8_encode($value), MCRYPT_MODE_ECB, $iv);
-
-        return base64_encode($encrypted_string);*/
         
         return self::encrypt_decrypt('encrypt', $value, $encryption_key);
     }
 
     static public function decryptId($value_encrypted, $encryption_key )
     {
-        /*$value_encrypted = base64_decode($value_encrypted);
-
-        $iv_size = mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
-        $iv      = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-        $value   = mcrypt_decrypt(MCRYPT_BLOWFISH, $encryption_key, $value_encrypted, MCRYPT_MODE_ECB, $iv);
-
-        $value = trim($value);
-        
-        if( !is_numeric($value) )
-        {
-            exit('Violacion de seguridad');
-        }
-
-        return $value;*/
         
         $result = self::encrypt_decrypt('encrypt', $value, $encryption_key);
         

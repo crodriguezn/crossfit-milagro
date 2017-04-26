@@ -1,0 +1,41 @@
+========================2017-04-16 14:46:04========================
+
+UPDATE "person" SET "name" = 'Super', "surname" = 'Administrador', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '0000000001', "birthday" = '1990-07-12', "gender" = 'GENDER_MALE', "address" = 'Milagro', "phone_cell" = '', "email" = 'admin@gmail.com', "estado_civil" = 'ESTADO_CIVIL_SOLTERO', "tipo_sangre" = 'TIPO_SANGRE_O+', "id_ciudad" = '47949' WHERE "id" =  '1'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:46:04========================
+
+UPDATE "user" SET "id_person" = '1', "username" = 'sadmin' WHERE "id" =  '1'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:46:04========================
+
+INSERT INTO "user_profile" ("id_user", "id_profile", "isActive", "id") VALUES ('1', '3', '1', 6)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:46:04========================
+
+DELETE FROM "user_profile__company_branch"
+WHERE "id_user_profile" =  6
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-16 14:46:04========================
+
+INSERT INTO "user_profile__company_branch" ("id_user_profile", "id_company_branch", "id") VALUES (6, '1', 10)
+
+Desde la IP: ::1
+
+=======================================================================
+

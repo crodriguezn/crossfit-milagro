@@ -1,0 +1,16 @@
+========================2016-02-06 10:58:46========================
+
+UPDATE "module" SET "id_parent" = NULL, "name" = 'Crossfit', "description" = 'Módulo de Crossfit', "name_key" = 'crossfit', "isAdmin" = '0', "isActive" = '1', "name_icon" = 'icon-stack' WHERE "id" =  '18'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-02-06 10:58:46========================
+
+UPDATE "permission" SET "name" = 'Acceso', "description" = 'Acceso al Módulo de Crossfit', "name_key" = 'access', "id_module" = '18' WHERE "id" =  '39'
+
+Desde la IP: ::1
+
+=======================================================================
+

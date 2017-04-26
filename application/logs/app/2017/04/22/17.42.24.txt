@@ -1,0 +1,32 @@
+========================2017-04-22 17:42:24========================
+
+INSERT INTO "module" ("id_parent", "name", "description", "name_key", "num_order", "isAdmin", "isActive", "name_icon", "id", "created", "modified") VALUES ('20', 'Programación de clases', 'SubModulo de gestion programación de clases', 'management_class_scheduling', 0, 0, '1', NULL, 22, '2017-04-22 17:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 17:42:24========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id", "created", "modified") VALUES ('Acceso', 'Acceso al submodulo de programación de clases', 'access', 22, 49, '2017-04-22 17:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 17:42:24========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id", "created", "modified") VALUES ('Crear/Nuevo', 'Crear una programación de clases', 'create', 22, 50, '2017-04-22 17:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-22 17:42:24========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id", "created", "modified") VALUES ('Editar/Actualizar', 'Editar una programación de clases', 'update', 22, 51, '2017-04-22 17:04:42', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+

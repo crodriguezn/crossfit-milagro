@@ -1,0 +1,422 @@
+========================2016-05-01 12:57:14========================
+
+Array
+(
+    [0] => eModule Object
+        (
+            [id_parent] => 14
+            [name] => Horarios de Clases
+            [description] => Mantenimiento de Horarios de Clases
+            [name_key] => setting_schedule
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 19
+        )
+
+    [1] => eModule Object
+        (
+            [id_parent] => 3
+            [name] => Roles
+            [description] => SubM처dulo de Rol
+            [name_key] => security_rol
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 4
+        )
+
+    [2] => eModule Object
+        (
+            [id_parent] => 10
+            [name] => Manual de Usuario
+            [description] => Submodulo de Informaci처n del Manual de la Aplicaci처n
+            [name_key] => app_information_manual
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 11
+        )
+
+    [3] => eModule Object
+        (
+            [id_parent] => 12
+            [name] => Empresa y Sucursales
+            [description] => SubModulo de Empresa y Sucursales
+            [name_key] => utility_company_and_company_branch
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 13
+        )
+
+    [4] => eModule Object
+        (
+            [id_parent] => 15
+            [name] => Perfil
+            [description] => Submodulo de Perfil de Usuario
+            [name_key] => user_profile
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 16
+        )
+
+    [5] => eModule Object
+        (
+            [id_parent] => 14
+            [name] => Clientes Crossfiteros
+            [description] => Mantenimiento de Crossfiteros (Clientes)
+            [name_key] => setting_customer_crossfit
+            [num_order] => 0
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 18
+        )
+
+    [6] => eModule Object
+        (
+            [id_parent] => 15
+            [name] => Cuentas de Usuarios
+            [description] => Submodulos de cuentas de usuarios
+            [name_key] => user_settings
+            [num_order] => 1
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 6
+        )
+
+    [7] => eModule Object
+        (
+            [id_parent] => 3
+            [name] => Perfiles
+            [description] => SubM처dulo a Perfiles
+            [name_key] => security_profile
+            [num_order] => 1
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 5
+        )
+
+    [8] => eModule Object
+        (
+            [id_parent] => 1
+            [name] => BackUp Data Base
+            [description] => SubModulo de BackUp Data Base
+            [name_key] => system_db_back_up
+            [num_order] => 1
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 9
+        )
+
+    [9] => eModule Object
+        (
+            [id_parent] => 
+            [name] => Utilitarios
+            [description] => Modulo de Utilitarios
+            [name_key] => utility
+            [num_order] => 1
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => icon-tools
+            [id] => 12
+        )
+
+    [10] => eModule Object
+        (
+            [id_parent] => 3
+            [name] => Bitacora
+            [description] => SubModulo de Bitacora
+            [name_key] => security_binnacle
+            [num_order] => 2
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 8
+        )
+
+    [11] => eModule Object
+        (
+            [id_parent] => 
+            [name] => Seguridad
+            [description] => M처dulo de Seguridad
+            [name_key] => security
+            [num_order] => 2
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => icon-key2
+            [id] => 3
+        )
+
+    [12] => eModule Object
+        (
+            [id_parent] => 1
+            [name] => Logs
+            [description] => SubModulo de Logs
+            [name_key] => system_log
+            [num_order] => 2
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 7
+        )
+
+    [13] => eModule Object
+        (
+            [id_parent] => 1
+            [name] => Configuraci처n Parametros
+            [description] => SubModulo de Configuraci처n de Parametros
+            [name_key] => system_setting_param
+            [num_order] => 3
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => 
+            [id] => 17
+        )
+
+    [14] => eModule Object
+        (
+            [id_parent] => 
+            [name] => Usuario
+            [description] => M처dulo de Usuario
+            [name_key] => user
+            [num_order] => 3
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => icon-users
+            [id] => 15
+        )
+
+    [15] => eModule Object
+        (
+            [id_parent] => 
+            [name] => Mantenimiento
+            [description] => M처dulo de Mantenimiento
+            [name_key] => setting
+            [num_order] => 4
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => icon-settings
+            [id] => 14
+        )
+
+    [16] => eModule Object
+        (
+            [id_parent] => 
+            [name] => Informaci처n
+            [description] => M처dulo de Informacion de la Aplicaci처n/Sistema
+            [name_key] => app_information
+            [num_order] => 5
+            [isAdmin] => 0
+            [isActive] => 1
+            [name_icon] => icon-apple
+            [id] => 10
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-05-01 12:57:14========================
+
+Array
+(
+    [app] => Array
+        (
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 2
+            [__id_user] => 2
+            [__id_person] => 2
+            [__isSuperAdmin] => 0
+            [__isAdmin] => 0
+            [__id_profile] => 2
+            [__last_time] => 2016-05-01 12:37:33
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => stdClass Object
+                (
+                    [browser_name_regex] => �^mozilla/5\.0 \(.*windows nt 6\.2.*wow64.*\).*gecko/.*firefox/.*$�
+                    [browser_name_pattern] => Mozilla/5.0 (*Windows NT 6.2*WOW64*)*Gecko/*Firefox/*
+                    [parent] => Firefox Generic
+                    [browser_bits] => 32
+                    [platform] => Win8
+                    [platform_version] => 6.2
+                    [platform_description] => Windows 8
+                    [platform_bits] => 64
+                    [platform_maker] => Microsoft Corporation
+                    [win32] => 
+                    [win64] => 1
+                    [device_name] => Windows Desktop
+                    [device_code_name] => Windows Desktop
+                    [comment] => Firefox Generic
+                    [browser] => Firefox
+                    [browser_type] => Browser
+                    [browser_maker] => Mozilla Foundation
+                    [frames] => 1
+                    [iframes] => 1
+                    [tables] => 1
+                    [cookies] => 1
+                    [javascript] => 1
+                    [javaapplets] => 1
+                    [cssversion] => 3
+                    [device_maker] => Various
+                    [device_type] => Desktop
+                    [device_pointing_method] => mouse
+                    [renderingengine_name] => Gecko
+                    [renderingengine_description] => For Firefox, Camino, K-Meleon, SeaMonkey, Netscape, and other Gecko-based browsers.
+                    [renderingengine_maker] => Mozilla Foundation
+                    [browser_modus] => unknown
+                    [version] => 0.0
+                    [majorver] => 0
+                    [minorver] => 0
+                    [alpha] => 
+                    [beta] => 
+                    [win16] => 
+                    [backgroundsounds] => 
+                    [vbscript] => 
+                    [activexcontrols] => 
+                    [ismobiledevice] => 
+                    [istablet] => 
+                    [issyndicationreader] => 
+                    [crawler] => 
+                    [aolversion] => 0
+                    [device_brand_name] => unknown
+                    [renderingengine_version] => unknown
+                )
+
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                )
+
+            [__permissions] => Array
+                (
+                    [setting_schedule] => Array
+                        (
+                        )
+
+                    [security_rol] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [utility_company_and_company_branch] => Array
+                        (
+                            [0] => access
+                            [1] => update_company
+                            [2] => access_company
+                            [3] => access_branch
+                            [4] => update_branch
+                            [5] => create_branch
+                            [6] => update_logo_company
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [setting_customer_crossfit] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [user_settings] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [security_profile] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                            [3] => view_permissions
+                            [4] => update_permissions
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                        )
+
+                    [utility] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                            [0] => access
+                            [1] => view
+                        )
+
+                    [security] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_log] => Array
+                        (
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+

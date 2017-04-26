@@ -11,7 +11,7 @@ class User_SettingsX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/user_settings/permission.php');
+        $this->load->file('application/modules/app/user/settings/permission.php');
         $this->permission = new User_Settings_Permission( $this->name_key );
         $this->permission->create = Helper_App_Session::isPermissionForModule($this->name_key,'create');
         $this->permission->update = Helper_App_Session::isPermissionForModule($this->name_key,'update');
@@ -64,8 +64,8 @@ class User_SettingsX extends MY_Controller
             case 'load-acount':
                 $this->loadAcount();
                 break;
-            case 'load-person':
-                $this->loadPerson();
+            case 'load-person-by-document':
+                $this->loadPersonByDocument();
                 break;
             case 'save-acount':
                 $this->saveAcount();
@@ -99,6 +99,7 @@ class User_SettingsX extends MY_Controller
 
         $eUsers = $data['eUsers'];
         $ePersons = $data['ePersons'];
+        $eProfiles = $data['eProfiles'];
         $count    = $data['count'];
         
         $aaData = array();
@@ -108,7 +109,7 @@ class User_SettingsX extends MY_Controller
             /* @var $eUser eUser */
             foreach( $eUsers as $num => $eUser )
             {
-                $aaData[] = array( trim($ePersons[$num]->document), (trim($ePersons[$num]->surname).' '.trim($ePersons[$num]->name)), trim($eUser->username), trim($eUser->id) );
+                $aaData[] = array( trim($ePersons[$num]->document), (trim($ePersons[$num]->surname).' '.trim($ePersons[$num]->name)), trim($eUser->username), trim($eProfiles[$num]->name), trim($eUser->id) );
             }
         }
         
@@ -257,7 +258,11 @@ class User_SettingsX extends MY_Controller
     
     private function loadAcount()
     {
-        $this->load->file('application/modules/app/user_settings/form/user_settings_form.php');
+        $this->load->file('application/modules/app/user/settings/form/user_settings_form.php');
+        
+        $frm_data = new Form_App_User_Settings();
+        
+        $frm_data->setIdForm(1);
         
         $resAjax = new Response_Ajax();
         
@@ -317,8 +322,6 @@ class User_SettingsX extends MY_Controller
 
             $eCompanyBranchs   = $dataCompanyBranchs['eCompanyBranchs'];
             
-            $frm_data = new Form_App_User_Settings();
-
             $frm_data->setUserEntity($eUser);
             $frm_data->setPersonEntity($ePerson);
             $frm_data->setUserProfileEntity($eUserProfile);
@@ -340,18 +343,22 @@ class User_SettingsX extends MY_Controller
     
     private function saveAcount()
     {
-        $this->load->file('application/modules/app/user_settings/form/user_settings_form.php');
+        $this->load->file('application/modules/app/user/settings/form/user_settings_form.php');
         
         $resAjax = new Response_Ajax();
         $frm_data = new Form_App_User_Settings(TRUE);
-        
+        $id_form = Helper_Encrypt::decode($frm_data->id_form);
         try
         {
-            
-            if( !$this->permission->update )
+            if(empty($id_form) &&( !$this->permission->create ))
+            {
+                throw new Exception('No tiene permisos para crear/nuevo');
+            }
+            elseif(!empty($id_form)&&( !$this->permission->update ))
             {
                 throw new Exception('No tiene permisos para editar/actualizar');
-            }
+            } 
+            
             
             if( !$frm_data->isValid() )
             {
@@ -383,8 +390,88 @@ class User_SettingsX extends MY_Controller
         echo $resAjax->toJsonEncode();
     }
     
-    private function loadPerson()
+    private function loadPersonByDocument()
     {
+        $this->load->file('application/modules/app/user/settings/form/user_settings_form.php');
         
+        $frm_data = new Form_App_User_Settings();
+        
+        $resAjax = new Response_Ajax();
+        
+        $document = $this->input->post('document');
+        try 
+        {
+            
+            //PERSON
+            $oBusPerson = Business_App_Person::loadByDocument($document);
+
+            if(!$oBusPerson->isSuccess())
+            {
+                throw new Exception($oBusPerson->message());
+            }
+            
+            $dataPerson = $oBusPerson->data();
+
+            /* @var $ePerson ePerson  */
+            $ePerson   = $dataPerson['ePerson'];
+            
+            
+            //USER
+            $oBusUser = Business_App_User::loadUserByIdPerson($ePerson->id);
+            if(!$oBusUser->isSuccess())
+            {
+                throw new Exception($oBusUser->message());
+            }
+            
+            $dataUser = $oBusUser->data();
+
+            /* @var $eUser eUser  */
+            $eUser   = $dataUser['eUser'];
+            
+            $frm_data->setUserEntity($eUser);
+            $frm_data->setPersonEntity($ePerson);
+            
+            if(!$eUser->isEmpty())
+            {
+                //USER_PROFILE
+                $oBusUserProfile = Business_App_User_Profile::loadUserProfile($eUser->id);
+
+                if(!$oBusUserProfile->isSuccess())
+                {
+                    throw new Exception($oBusUserProfile->message());
+                }
+
+                $dataUserProfile = $oBusUserProfile->data();
+
+                /* @var $eUserProfile eUserProfile  */
+                $eUserProfile   = $dataUserProfile['eUserProfile'];
+
+                //COMPANY_BRANCH
+                $oBusCompanyBranch = Business_App_User_Settings::listCompanyBranchsByUserProfile($eUserProfile->id_user, $eUserProfile->id_profile);
+
+                if(!$oBusCompanyBranch->isSuccess())
+                {
+                    throw new Exception($oBusCompanyBranch->message());
+                }
+
+                $dataCompanyBranchs = $oBusCompanyBranch->data();
+
+                $eCompanyBranchs   = $dataCompanyBranchs['eCompanyBranchs'];
+                
+                $frm_data->setUserProfileEntity($eUserProfile);
+                $frm_data->setUserProfile_CompanyBranchEntity($eCompanyBranchs);
+            }
+            
+            $resAjax->isSuccess( TRUE );
+        }
+        catch (Exception $exc)
+        {
+            $resAjax->isSuccess( FALSE );
+            $resAjax->message( $exc->getMessage() );
+        }
+        
+        $resAjax->form('person', $frm_data->toArray());
+        
+        echo $resAjax->toJsonEncode();
     }
 }

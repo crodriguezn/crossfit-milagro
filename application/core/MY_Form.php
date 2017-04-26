@@ -7,10 +7,22 @@ class MY_Form
     const ARRAY_ONLY_ERRORS = 2;
     
     public $errors;
-    
+    public $id_form;
     public function __construct()
     {
-        $this->errors = array();
+        $this->errors   = array();
+        $this->id_form  = Helper_Encrypt::encode(0);
+    }
+    
+    public function setIdForm( $value )
+    {
+        $this->id_form = Helper_Encrypt::encode($value);
+    }
+    
+    public function getIdForm()
+    {
+        $MY =& MY_Controller::get_instance();
+        return Helper_Encrypt::decode($MY->input->post('id_form'));
     }
     
     public function addError( $field, $message )

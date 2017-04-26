@@ -11,7 +11,7 @@ class System_Db_Back_Up extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/system_db_backup/permission.php');
+        $this->load->file('application/modules/app/system/db_backup/permission.php');
         $this->permission = new System_BackUp_DB_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -52,7 +52,7 @@ class System_Db_Back_Up extends MY_Controller
         
         $arr = array('eAppVersion' => $eAppVersion);
         
-        Helper_App_View::layout("app/html/pages/system_db_backup/page", $arr);
+        Helper_App_View::layout("app/html/pages/system/db_backup/page", $arr);
     }
     
     public function backup($accion='DOWNLOAD')
@@ -70,7 +70,7 @@ class System_Db_Back_Up extends MY_Controller
             'permissions' => $this->permission->toArray(),
         );
         
-        Helper_App_JS::showMVC('system_db_backup', $params);
+        Helper_App_JS::showMVC('system/db_backup', $params);
         
     }
 }

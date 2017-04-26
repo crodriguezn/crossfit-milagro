@@ -48,6 +48,7 @@ class Configuration_System_Model extends MY_Model
 class eConfigurationSystem extends MY_Entity
 {
     public $name_system;
+    public $name_key_system;
     public $logo;
     public $session_time_limit_min;
     public $session_time_limit_max;
@@ -60,6 +61,7 @@ class eConfigurationSystem extends MY_Entity
         if( $useDefault )
         {
             $this->name_system              = NULL;
+            $this->name_key_system          = NULL;
             $this->logo                     = NULL;
             $this->session_time_limit_min   = NULL;
             $this->session_time_limit_max   = NULL;

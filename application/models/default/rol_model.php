@@ -91,11 +91,11 @@ class Rol_Model extends MY_Model
                     UPPER(\"name\") LIKE UPPER('%" . ( $this->db->escape_like_str($filter->text) ) . "%') OR
                     UPPER(\"name_key\") LIKE UPPER('%" . ( $this->db->escape_like_str($filter->text) ) . "%')
                 )
-            " . (is_null($filter->isEditable) ? '' : ' AND \"isEditable\" = '.($filter->isEditable).'' ) . "
+            " . (is_null($filter->isEditable) ? '' : " AND \"isEditable\" = ".($filter->isEditable)."" ) . "
             " . ( $useCounter ? '' : " ORDER BY \"name\" ASC " ) . "
             " . ( $useCounter || is_null($filter->limit) || is_null($filter->offset) ? '' : " LIMIT ".( $filter->limit )." OFFSET ".( $filter->offset )." " ) . "
         ";
-
+        //Helper_Log::write($sql);
         return $sql;
     }
     

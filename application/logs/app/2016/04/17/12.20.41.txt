@@ -1,0 +1,8 @@
+========================2016-04-17 12:20:41========================
+
+UPDATE "person" SET "name" = 'Maria Isabel', "surname" = 'Heredia Garcia', "tipo_documento" = 'TIPO_IDENT_CEDULA', "document" = '0928429745', "birthday" = '1994-12-01', "gender" = 'GENDER_FEMALE', "address" = 'Milagro', "phone_cell" = '', "email" = 'mheredia@gmail.com', "estado_civil" = 'ESTADO_CIVIL_CASADO', "tipo_sangre" = 'TIPO_SANGRE_O+', "id_ciudad" = '47949' WHERE "id" =  '3'
+
+Desde la IP: ::1
+
+=======================================================================
+

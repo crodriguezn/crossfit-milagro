@@ -139,4 +139,35 @@ class Business_App_User
         
     }
     
+    static public function loadUserByIdPerson( $id_person )
+    {
+        $MY =& MY_Controller::get_instance();
+        
+        $oBus = new Response_Business();
+        
+        /* @var $mUser User_Model */
+        $mUser =& $MY->mUser;
+        
+        try
+        {
+            /* @var $eUser eUser  */
+            $eUser = $mUser->load($id_person, 'id_person');
+            
+            $oBus->isSuccess(TRUE);
+        }
+        catch( Exception $e )
+        {
+            $oBus->isSuccess(FALSE);
+            $oBus->message( $e->getMessage() );
+        }
+        
+        $oBus->data(array(
+            'eUser' => $eUser
+        ));
+        
+        return $oBus;
+        
+        
+    }
+    
 }

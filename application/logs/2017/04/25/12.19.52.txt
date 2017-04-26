@@ -1,0 +1,44 @@
+========================2017-04-25 12:19:52========================
+
+
+            SELECT 
+                "e"."id" AS "e_id","e"."id_person" AS "e_id_person","e"."date_registration" AS "e_date_registration","e"."salary" AS "e_salary","e"."isCoach" AS "e_isCoach","e"."created" AS "e_created","e"."modified" AS "e_modified","p"."id" AS "p_id","p"."name" AS "p_name","p"."surname" AS "p_surname","p"."tipo_documento" AS "p_tipo_documento","p"."document" AS "p_document","p"."birthday" AS "p_birthday","p"."gender" AS "p_gender","p"."address" AS "p_address","p"."phone_cell" AS "p_phone_cell","p"."email" AS "p_email","p"."estado_civil" AS "p_estado_civil","p"."tipo_sangre" AS "p_tipo_sangre","p"."id_ciudad" AS "p_id_ciudad","p"."created" AS "p_created","p"."modified" AS "p_modified"
+            FROM "employee" AS "e"
+                INNER JOIN "person" AS "p" ON "p"."id" = "e"."id_person" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') 
+                )
+                 AND ("e"."isCoach"=1)
+             ORDER BY "p"."surname" ASC 
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 12:19:52========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "employee" AS "e"
+                INNER JOIN "person" AS "p" ON "p"."id" = "e"."id_person" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') 
+                )
+                 AND ("e"."isCoach"=1)
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

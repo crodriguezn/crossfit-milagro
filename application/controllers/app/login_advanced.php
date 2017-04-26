@@ -27,8 +27,8 @@ class Login_Advanced extends MY_Controller
         
     }
 
-	public function index()
-	{
+    public function index()
+    {
 
             $login_title = 'INGRESO AL SISTEMA';
             
@@ -70,14 +70,23 @@ class Login_Advanced extends MY_Controller
             /* @var $eAppVersion eAppVersion  */
             $eAppVersion = $mAppVersion->loadArray( array( 'isActive' => 1, 'isProject' => 1 ) );
             
+            /* @var $mConfigurationSystem Configuration_System_Model */
+            $mConfigurationSystem =& $MY->mConfigurationSystem;
+
+            $id_system = Helper_Config::getSystemId();
+
+            /* @var $eConfigurationSystem eConfigurationSystem */
+            $eConfigurationSystem = $mConfigurationSystem->load($id_system);
+            
             $params_view = array(
-            'login_title'       => $login_title,
-            'browser_message'   => $this->browser['isSuccess'] ? $this->browser['message'] : '',
-            'ePerson'           => $ePerson,
-            'eProfile'          => $eProfile,
-            'eUser'             => $eUser,
-            'eCompany'          => $eCompany,
-            'eAppVersion'       => $eAppVersion
+            'login_title'           => $login_title,
+            'browser_message'       => $this->browser['isSuccess'] ? $this->browser['message'] : '',
+            'ePerson'               => $ePerson,
+            'eProfile'              => $eProfile,
+            'eUser'                 => $eUser,
+            'eCompany'              => $eCompany,
+            'eAppVersion'           => $eAppVersion,
+            'eConfigurationSystem'  => $eConfigurationSystem
         );
         
         Helper_App_View::view('app/html/pages/login/advanced', $params_view);

@@ -11,7 +11,7 @@ class Utility_Company_And_Company_Branch extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
 
-        $this->load->file('application/modules/app/utility_company_and_company_branch/permission.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/permission.php');
         $this->permission = new Utility_Company_And_Company_Branch_Permission( $this->name_key );
         
         if( !Helper_App_Session::isLogin() )
@@ -42,13 +42,13 @@ class Utility_Company_And_Company_Branch extends MY_Controller
 
     public function index()
     {
-        Helper_App_View::layout('app/html/pages/utility_company_and_company_branch/page');
+        Helper_App_View::layout('app/html/pages/utility/company_and_company_branch/page');
     }
     
     public function mvcjs()
     {
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_form.php');
-        $this->load->file('application/modules/app/utility_company_and_company_branch/form/company_branch_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_form.php');
+        $this->load->file('application/modules/app/utility/company_and_company_branch/form/company_branch_form.php');
         
         $data_company = new Form_App_Company();
         $data_company_branch  = new Form_App_Company_Branch();
@@ -61,6 +61,6 @@ class Utility_Company_And_Company_Branch extends MY_Controller
             'data_company_branch_default' => $data_company_branch->toArray()
         );
         
-        Helper_App_JS::showMVC('utility_company_and_company_branch', $params);
+        Helper_App_JS::showMVC('utility/company_and_company_branch', $params);
     }
 }

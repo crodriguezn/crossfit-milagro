@@ -1,0 +1,128 @@
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_date" ("start_day", "name", "id", "created", "modified") VALUES ('2017-05-03', 'Clase', 7, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+UPDATE "class_scheduling" SET "isActive" = 0, "modified" = '2017-04-25 23:26:50' WHERE "id_class_date" =  7
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('1', 7, '1', '1', 85, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('2', 7, '1', '1', 86, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('3', 7, '1', '1', 87, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('4', 7, '1', '1', 88, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('5', 7, '1', '1', 89, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('6', 7, '1', '1', 90, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('7', 7, '1', '1', 91, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('8', 7, '2', '1', 92, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('9', 7, '2', '1', 93, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('10', 7, '2', '1', 94, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('11', 7, '2', '1', 95, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('12', 7, '2', '1', 96, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('13', 7, '2', '1', 97, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2017-04-25 23:26:50========================
+
+INSERT INTO "class_scheduling" ("id_class_hour", "id_class_date", "id_employee", "isActive", "id", "created", "modified") VALUES ('14', 7, '2', '1', 98, '2017-04-25 23:04:26', NULL)
+
+Desde la IP: ::1
+
+=======================================================================
+

@@ -43,6 +43,17 @@ var Core = {
     }
 };
 
+Core.Entity = {
+    toData: function (data, entity)
+    {
+        var _entity = entity();
+        for (var index in data)
+        {
+            _entity.runInit(index,data[index].value);
+        }
+    }
+};
+
 Core.Notification = {
     success: function (msg)
     {
@@ -250,6 +261,39 @@ Core.Form = {
 
         //console.log( data );
         return data;
+    },
+    readOnly: function($frm, isFormReadOnly)
+    {
+        var self = this;
+
+        $frm.find(':input[type="text"], :input[type="password"]').each(function() {
+            $(this, self.$frm).prop('readonly', isFormReadOnly);
+        });
+        
+        $frm.find(':input[type="radio"]').each(function() {
+            $(this, self.$frm).prop('disabled', isFormReadOnly);
+        });
+
+        $frm.find(':input[type="checkbox"][name]').each(function() {
+            $(this, self.$frm).prop('disabled', isFormReadOnly);
+        });
+
+        $frm.find('select').each(function() {
+            $(this, self.$frm).select2('enable', !isFormReadOnly);
+            if (isFormReadOnly)
+            {
+                $(this, self.$frm).prop('disabled', true);
+            }
+            else
+            {
+                $(this, self.$frm).select2('enable', true);
+            }
+            
+        });
+
+        $frm.find('textarea').each(function() {
+            $(this, self.$frm).prop('disabled', isFormReadOnly);
+        });
     }
 };
 

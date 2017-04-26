@@ -11,12 +11,13 @@ class Security_ProfileX extends MY_Controller
     {
         parent::__construct( MY_Controller::SYSTEM_APP );
         
-        $this->load->file('application/modules/app/security_profile/permission.php');
+        $this->load->file('application/modules/app/security/profile/permission.php');
         $this->permission = new Security_Profile_Permission( $this->name_key );
         $this->permission->create = Helper_App_Session::isPermissionForModule($this->name_key,'create');
         $this->permission->update = Helper_App_Session::isPermissionForModule($this->name_key,'update');
-        $this->permission->view_permission      = Helper_App_Session::isPermissionForModule($this->name_key,'view_permissions');
-        $this->permission->update_permission    = Helper_App_Session::isPermissionForModule($this->name_key,'update_permissions');
+        $this->permission->access_permissions    = Helper_App_Session::isPermissionForModule($this->name_key,'access_permissions');
+        $this->permission->update_permissions    = Helper_App_Session::isPermissionForModule($this->name_key,'update_permissions');
+        
     }
     
     public function process( $action )
@@ -113,7 +114,7 @@ class Security_ProfileX extends MY_Controller
     
     private function loadProfile()
     {
-        $this->load->file('application/modules/app/security_profile/form/profile_form.php');
+        $this->load->file('application/modules/app/security/profile/form/profile_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -128,6 +129,8 @@ class Security_ProfileX extends MY_Controller
         
         $frm_data = new Form_App_Security_Profile();
         
+        $frm_data->setIdForm(1);
+        
         $frm_data->setProfileEntity($eProfile);
         
         $resAjax->isSuccess( $oBus->isSuccess() );
@@ -139,7 +142,7 @@ class Security_ProfileX extends MY_Controller
     
     private function saveProfile()
     {
-        $this->load->file('application/modules/app/security_profile/form/profile_form.php');
+        $this->load->file('application/modules/app/security/profile/form/profile_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -181,7 +184,7 @@ class Security_ProfileX extends MY_Controller
     
     private function saveProfilePermission()
     {
-        $this->load->file('application/modules/app/security_profile/form/permissions_form.php');
+        $this->load->file('application/modules/app/security/profile/form/permissions_form.php');
         
         $resAjax = new Response_Ajax();
         
@@ -189,7 +192,7 @@ class Security_ProfileX extends MY_Controller
         
         try
         {
-            if( !empty($frmData->id_profile) && !$this->permission->update_permission )
+            if( !empty($frmData->id_profile) && !$this->permission->update_permissions )
             {
                 throw new Exception('No tiene permisos para editar');
             }

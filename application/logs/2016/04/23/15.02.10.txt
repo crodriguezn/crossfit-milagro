@@ -1,0 +1,48 @@
+========================2016-04-23 15:02:10========================
+
+
+            SELECT 
+                "c"."id" AS "c_id","c"."id_person" AS "c_id_person","c"."code" AS "c_code","c"."registration_date" AS "c_registration_date","p"."id" AS "p_id","p"."name" AS "p_name","p"."surname" AS "p_surname","p"."tipo_documento" AS "p_tipo_documento","p"."document" AS "p_document","p"."birthday" AS "p_birthday","p"."gender" AS "p_gender","p"."address" AS "p_address","p"."phone_cell" AS "p_phone_cell","p"."email" AS "p_email","p"."estado_civil" AS "p_estado_civil","p"."tipo_sangre" AS "p_tipo_sangre","p"."id_ciudad" AS "p_id_ciudad","ci"."id" AS "ci_id","ci"."id_pais" AS "ci_id_pais","ci"."id_provincia" AS "ci_id_provincia","ci"."nombre" AS "ci_nombre","ci"."Latitude" AS "ci_Latitude","ci"."Longitude" AS "ci_Longitude","ci"."TimeZone" AS "ci_TimeZone","ci"."DmaId" AS "ci_DmaId","ci"."Code" AS "ci_Code"
+            FROM "customer" AS "c"
+                INNER JOIN "person" AS "p" ON "p"."id" = "c"."id_person" 
+                INNER JOIN "ciudad" AS "ci" ON "ci"."id" = "p"."id_ciudad" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') OR 
+                    UPPER("c"."code") LIKE UPPER('%%')
+                )
+            GROUP BY "c"."id", "p"."id", "ci"."id"
+             ORDER BY "surname" ASC 
+             LIMIT 10 OFFSET 0 
+        
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-23 15:02:10========================
+
+
+            SELECT 
+                COUNT(*) AS "count"
+            FROM "customer" AS "c"
+                INNER JOIN "person" AS "p" ON "p"."id" = "c"."id_person" 
+                INNER JOIN "ciudad" AS "ci" ON "ci"."id" = "p"."id_ciudad" 
+            WHERE 1=1
+                AND (
+                    UPPER("p"."name") LIKE UPPER('%%') OR 
+                    UPPER("p"."document") LIKE UPPER('%%') OR 
+                    UPPER("p"."surname") LIKE UPPER('%%') OR 
+                    UPPER("c"."code") LIKE UPPER('%%')
+                )
+            GROUP BY "c"."id", "p"."id", "ci"."id"
+            
+            
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

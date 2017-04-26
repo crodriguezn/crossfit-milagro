@@ -80,7 +80,7 @@ class Business_App_Rol
         try
         {
             $isEditable = TRUE;
-            
+           
             if( !$eRol->isEmpty() )
             {
                 $eRolT = $mRol->load( $eRol->id );
@@ -93,7 +93,8 @@ class Business_App_Rol
                     }
                 }
                 
-                $isEditable = $eRolT->isEditable == 0;
+                $isEditable = $eRolT->isEditable == 1;
+                
             }
             
             if( $isEditable )

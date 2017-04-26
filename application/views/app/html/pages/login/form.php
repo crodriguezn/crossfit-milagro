@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo empty($eCompany->name) ? 'Sistema de Control del WOD (Workout Of the Day)' : $eCompany->name ?></title>
+        <title><?php echo empty($eConfigurationSystem->name_key_system) ? 'SysControl of BOX' : $eConfigurationSystem->name_key_system ?></title>
         <link rel="icon" href="<?php echo base_url("resources/img/favicon.ico"); ?>" type="image/x-icon"/>
         <link href="<?php echo $resource_path; ?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $resource_path; ?>css/londinium-theme.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
         <!-- Navbar -->
         <div class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><?php echo empty($eConfigurationSystem->name_system) ? 'Sistema de Control del WOD (Workout Of the Day)' : $eConfigurationSystem->name_system ?></a>
+                <a class="navbar-brand" href="#"><?php echo empty($eConfigurationSystem->name_system) ? 'Sistema de Control del BOX' : $eConfigurationSystem->name_system ?></a>
             </div>
 
         </div>
@@ -127,12 +127,12 @@
                 <a href="https://twitter.com/TRodriguezN" target="_blank" title="Twitter" class="tip">
                     <i class="icon-twitter"></i>
                 </a> 
-                <a href="https://www.facebook.com/Luch1t0" target="_blank" title="Facebook" class="tip">
+                <a href="https://www.facebook.com/crodriguezn.ec" target="_blank" title="Facebook" class="tip">
                     <i class="icon-facebook"></i>
                 </a> <a href="https://www.instagram.com/crodriguezn90/" target="_blank" title="Istragram" class="tip">
                     <i class="icon-cog3"></i>
                 </a> 
-                <a href="http://depwebrodriguez.honor.es/" target="_blank" title="Luis Rodriguez" class="tip">
+                <a href="http://luis-rodriguez-ec.herokuapp.com/site/index" target="_blank" title="Luis Rodriguez" class="tip">
                     <i class="icon-link"></i>
                 </a>
                 <a title="Aplicación" class="tip"> <?php echo '<i class="icon-screen"></i> ' . $eAppVersion->name ?></a>

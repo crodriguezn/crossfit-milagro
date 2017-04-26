@@ -1,0 +1,19 @@
+========================2016-04-23 14:32:29========================
+
+
+            SELECT
+                "u".*
+            FROM
+                "user" AS "u"
+                INNER JOIN "person" AS "p" ON "p"."id" = "u"."id_person"
+                LEFT JOIN "user_profile" AS "up" ON "up".id_user="u"."id"
+            WHERE 1=1
+                AND "u"."username" = 'mheredia'
+                AND "u"."password" = 'e10adc3949ba59abbe56e057f20f883e'
+                AND "up"."isActive" = 1
+        
+
+Desde la IP: ::1
+
+=======================================================================
+

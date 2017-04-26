@@ -2,6 +2,16 @@
 
 class Helper_Config
 {
+    static public function getEncryptionKey()
+    {
+        $MY =& MY_Controller::get_instance();
+        
+        $config = $MY->config->item('encryption_key');
+        //Helper_Log::write($config, Helper_Log::LOG_APP);
+        return $config;
+    }
+
+
     static public function getCompanyId()
     {
         $MY =& MY_Controller::get_instance();

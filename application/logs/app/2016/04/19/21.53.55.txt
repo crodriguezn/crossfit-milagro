@@ -1,0 +1,32 @@
+========================2016-04-19 21:53:55========================
+
+UPDATE "module" SET "id_parent" = '14', "name" = 'Clientes Crossfiteros', "description" = 'Mantenimiento de Crossfiteros (Clientes)', "name_key" = 'setting_customer_crossfit', "isAdmin" = '0', "isActive" = '1', "name_icon" = NULL WHERE "id" =  '18'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-19 21:53:55========================
+
+UPDATE "permission" SET "name" = 'Acceso', "description" = 'Acceso al mantenimiento de clientes crossfiteros', "name_key" = 'access', "id_module" = '18' WHERE "id" =  '39'
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-19 21:53:55========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id") VALUES ('Crear', 'Crear un nuevo cliente', 'create', '18', 40)
+
+Desde la IP: ::1
+
+=======================================================================
+
+========================2016-04-19 21:53:55========================
+
+INSERT INTO "permission" ("name", "description", "name_key", "id_module", "id") VALUES ('Actualizar/Editar', 'Actualizar/Editar un cliente', 'update', '18', 41)
+
+Desde la IP: ::1
+
+=======================================================================
+

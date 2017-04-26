@@ -1,0 +1,186 @@
+========================2017-04-16 14:48:59========================
+
+Array
+(
+    [app_crossfit] => Array
+        (
+            [__id_session] => bracn566amf3s3siomkt8bhk127A1lTldCU7Nfga7DrCbjq7g1UJ1coT3i
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 2
+            [__id_user] => 2
+            [__id_person] => 2
+            [__isSuperAdmin] => 
+            [__isAdmin] => 
+            [__id_profile] => 2
+            [__last_time] => 2017-04-16 14:36:11
+            [__ip] => ::1
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => stdClass Object
+                (
+                    [browser_name_regex] => §^mozilla/5\.0 \(.*windows nt 6\.2.*wow64.*\).*gecko/.*firefox/.*$§
+                    [browser_name_pattern] => Mozilla/5.0 (*Windows NT 6.2*WOW64*)*Gecko/*Firefox/*
+                    [parent] => Firefox Generic
+                    [browser_bits] => 32
+                    [platform] => Win8
+                    [platform_version] => 6.2
+                    [platform_description] => Windows 8
+                    [platform_bits] => 64
+                    [platform_maker] => Microsoft Corporation
+                    [win32] => 
+                    [win64] => 1
+                    [device_name] => Windows Desktop
+                    [device_code_name] => Windows Desktop
+                    [comment] => Firefox Generic
+                    [browser] => Firefox
+                    [browser_type] => Browser
+                    [browser_maker] => Mozilla Foundation
+                    [frames] => 1
+                    [iframes] => 1
+                    [tables] => 1
+                    [cookies] => 1
+                    [javascript] => 1
+                    [javaapplets] => 1
+                    [cssversion] => 3
+                    [device_maker] => Various
+                    [device_type] => Desktop
+                    [device_pointing_method] => mouse
+                    [renderingengine_name] => Gecko
+                    [renderingengine_description] => For Firefox, Camino, K-Meleon, SeaMonkey, Netscape, and other Gecko-based browsers.
+                    [renderingengine_maker] => Mozilla Foundation
+                    [browser_modus] => unknown
+                    [version] => 0.0
+                    [majorver] => 0
+                    [minorver] => 0
+                    [alpha] => 
+                    [beta] => 
+                    [win16] => 
+                    [backgroundsounds] => 
+                    [vbscript] => 
+                    [activexcontrols] => 
+                    [ismobiledevice] => 
+                    [istablet] => 
+                    [issyndicationreader] => 
+                    [crawler] => 
+                    [aolversion] => 0
+                    [device_brand_name] => unknown
+                    [renderingengine_version] => unknown
+                )
+
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                )
+
+            [__permissions] => Array
+                (
+                    [utility_company_and_company_branch] => Array
+                        (
+                        )
+
+                    [security_rol] => Array
+                        (
+                        )
+
+                    [setting_customer_crossfit] => Array
+                        (
+                        )
+
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                            [1] => access
+                            [2] => access
+                        )
+
+                    [management_class_scheduling] => Array
+                        (
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => access
+                            [2] => access
+                            [3] => update
+                            [4] => update
+                            [5] => update
+                        )
+
+                    [security_profile] => Array
+                        (
+                        )
+
+                    [management] => Array
+                        (
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                        )
+
+                    [user_settings] => Array
+                        (
+                        )
+
+                    [setting_class_schedule] => Array
+                        (
+                        )
+
+                    [system_log] => Array
+                        (
+                        )
+
+                    [utility] => Array
+                        (
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                        )
+
+                    [security] => Array
+                        (
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                            [1] => access
+                            [2] => access
+                        )
+
+                    [setting] => Array
+                        (
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                            [1] => access
+                            [2] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+

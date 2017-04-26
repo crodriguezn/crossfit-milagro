@@ -56,7 +56,7 @@ $autoload['libraries'] = array(
     // SYSTEM
     'upload',
     // APPLICATION
-    'libsession','libbrowscap','libarchivo','library_jasperstarter'
+    'libsession','libbrowscap','libarchivo','library_jasperstarter','libcookie'
 );
 
 
@@ -127,9 +127,15 @@ $autoload['model'] = array(
     'mCatalog'                      => 'default/catalog_model',
     'mCatalogType'                  => 'default/catalog_type_model',
     'mCiudad'                       => 'default/ciudad_model',
+    'mClassDate'                    => 'default/class_date_model',
+    'mClassHour'                    => 'default/class_hour_model',
+    'mClassScheduling'              => 'default/class_scheduling_model',
     'mCompanyBranch'                => 'default/company_branch_model',
     'mCompany'                      => 'default/company_model',
     'mConfigurationSystem'          => 'default/configuration_system_model',
+    'mControlIMC'                   => 'default/control_imc_model',
+    'mCustomer'                     => 'default/customer_model',
+    'mEmployee'                     => 'default/employee_model',
     'mModule'                       => 'default/module_model',
     'mPais'                         => 'default/pais_model',
     'mPermission'                   => 'default/permission_model',

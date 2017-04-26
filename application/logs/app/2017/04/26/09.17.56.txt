@@ -1,0 +1,233 @@
+========================2017-04-26 09:17:56========================
+
+Array
+(
+    [app_crossfit] => Array
+        (
+            [__id_session] => gjlc3vjaalvlgcglid0jqm56877A1lTldCU7Nfga7DrCbjq7g1UJ1coT3i
+            [__id_company] => 1
+            [__id_company_branch] => 1
+            [__id_rol] => 1
+            [__id_user] => 1
+            [__user_profile_picture] => profile.jpg
+            [__id_person] => 1
+            [__isSuperAdmin] => 1
+            [__isAdmin] => 1
+            [__id_profile] => 1
+            [__last_time] => 2017-04-26 09:17:54
+            [__ip] => ::1
+            [__inInactivity] => 1
+            [__isBlock] => 
+            [__id_system] => 1
+            [__isIExplorer] => Array
+                (
+                    [isSuccess] => 
+                    [message] => 
+                )
+
+            [__browser] => stdClass Object
+                (
+                    [browser_name_regex] => §^mozilla/5\.0 \(.*windows nt 6\.2.*wow64.*\).*gecko/.*firefox/.*$§
+                    [browser_name_pattern] => Mozilla/5.0 (*Windows NT 6.2*WOW64*)*Gecko/*Firefox/*
+                    [parent] => Firefox Generic
+                    [browser_bits] => 32
+                    [platform] => Win8
+                    [platform_version] => 6.2
+                    [platform_description] => Windows 8
+                    [platform_bits] => 64
+                    [platform_maker] => Microsoft Corporation
+                    [win32] => 
+                    [win64] => 1
+                    [device_name] => Windows Desktop
+                    [device_code_name] => Windows Desktop
+                    [comment] => Firefox Generic
+                    [browser] => Firefox
+                    [browser_type] => Browser
+                    [browser_maker] => Mozilla Foundation
+                    [frames] => 1
+                    [iframes] => 1
+                    [tables] => 1
+                    [cookies] => 1
+                    [javascript] => 1
+                    [javaapplets] => 1
+                    [cssversion] => 3
+                    [device_maker] => Various
+                    [device_type] => Desktop
+                    [device_pointing_method] => mouse
+                    [renderingengine_name] => Gecko
+                    [renderingengine_description] => For Firefox, Camino, K-Meleon, SeaMonkey, Netscape, and other Gecko-based browsers.
+                    [renderingengine_maker] => Mozilla Foundation
+                    [browser_modus] => unknown
+                    [version] => 0.0
+                    [majorver] => 0
+                    [minorver] => 0
+                    [alpha] => 
+                    [beta] => 
+                    [win16] => 
+                    [backgroundsounds] => 
+                    [vbscript] => 
+                    [activexcontrols] => 
+                    [ismobiledevice] => 
+                    [istablet] => 
+                    [issyndicationreader] => 
+                    [crawler] => 
+                    [aolversion] => 0
+                    [device_brand_name] => unknown
+                    [renderingengine_version] => unknown
+                )
+
+            [__id_company_branck_ids] => Array
+                (
+                    [0] => 1
+                )
+
+            [__permissions] => Array
+                (
+                    [system] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_module] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [management_calendar] => Array
+                        (
+                            [0] => update
+                            [1] => create
+                            [2] => access
+                        )
+
+                    [utility_company_and_company_branch] => Array
+                        (
+                            [0] => access
+                            [1] => update_company
+                            [2] => access_company
+                            [3] => access_branch
+                            [4] => update_branch
+                            [5] => create_branch
+                            [6] => update_logo_company
+                        )
+
+                    [security_rol] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [user_profile] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [app_information_manual] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting_customer_crossfit] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                            [3] => access_imc
+                            [4] => create_imc
+                        )
+
+                    [management_class_scheduling] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [setting_class_hour] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [security_profile] => Array
+                        (
+                            [0] => update
+                            [1] => update_permissions
+                            [2] => access_permissions
+                            [3] => access
+                            [4] => create
+                        )
+
+                    [user_settings] => Array
+                        (
+                            [0] => access
+                            [1] => create
+                            [2] => update
+                        )
+
+                    [system_db_back_up] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [management] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [system_log] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [utility] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [security_binnacle] => Array
+                        (
+                            [0] => access
+                            [1] => view
+                        )
+
+                    [system_setting_param] => Array
+                        (
+                            [0] => access
+                            [1] => update
+                        )
+
+                    [security] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [user] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [setting] => Array
+                        (
+                            [0] => access
+                        )
+
+                    [app_information] => Array
+                        (
+                            [0] => access
+                        )
+
+                )
+
+        )
+
+)
+
+
+Desde la IP: ::1
+
+=======================================================================
+
